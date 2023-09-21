@@ -27,68 +27,82 @@
                 <button class="btn-search">buscar</button>
             </form>
         </header>
-        <div class="container-filter container">
-            <div class="icon-filter">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                    class="icon">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
-                </svg>
+        <nav>
+            <ul>
+                <li><a href="#pokedex">Pokedex</a></li>
+                <li><a href="#mapa">Mapa</a></li>
+            </ul>
 
-            </div>
-            <span>Filtrar</span>
-        </div>
-        <main class="card-list-pokemon container">
-            <a href="pokemon.html" class="card-pokemon">
-                <div class="card-img">
-                    <img src="img/asset-pokemon/1.png" alt="Pokemon Bulbasaur">
-                </div>
-                <div class="card-infor">
-                    <span class="pokemon-id">N° 1</span>
-                    <h3>Bulbasaur</h3>
-                    <div class="card-types">
-                        <span class="grass">Planta</span>
-                        <span class="poison">Veneno</span>
-                    </div>
-                </div>
-            </a>
-            <a href="pokemon.html" class="card-pokemon">
-                <div class="card-img">
-                    <img src="img/asset-pokemon/2.png" alt="Pokemon Ivisaur">
-                </div>
-                <div class="card-infor">
-                    <span class="pokemon-id">N° 2</span>
-                    <h3>Ivisaur</h3>
-                    <div class="card-types">
-                        <span class="grass">Planta</span>
-                        <span class="poison">Veneno</span>
-                    </div>
-                </div>
-            </a>
-            <a href="pokemon.html" class="card-pokemon">
-                <div class="card-img">
-                    <img src="img/asset-pokemon/3.png" alt="Pokemon Venusaur">
-                </div>
-                <div class="card-infor">
-                    <span class="pokemon-id">N° 3</span>
-                    <h3>Venusaur</h3>
-                    <div class="card-types">
-                        <span class="grass">Planta</span>
-                        <span class="poison">Veneno</span>
-                    </div>
-                </div>
-            </a>
-        </main>
-        <div class="container-filters">
-            <div class="filter-by-type">
-                <span>Tipo</span>
-                <div class="group-typ">
-                    <input type="checkbox" name="" id="">
-                </div>
+        </nav>
+        <section id="pokedex">
+            <div class="container-filter container">
+                <div class="icon-filter">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor"
+                        class="icon">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
+                    </svg>
 
+                </div>
+                <span>Filtrar</span>
             </div>
-        </div>
+            <main class="card-list-pokemon container">
+                <a href="pokemon.html" class="card-pokemon">
+                    <div class="card-img">
+                        <img src="img/asset-pokemon/1.png"
+                            alt="Pokemon Bulbasaur">
+                    </div>
+                    <div class="card-infor">
+                        <span class="pokemon-id">N° 1</span>
+                        <h3>Bulbasaur</h3>
+                        <div class="card-types">
+                            <span class="grass">Planta</span>
+                            <span class="poison">Veneno</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="pokemon.html" class="card-pokemon">
+                    <div class="card-img">
+                        <img src="img/asset-pokemon/2.png" alt="Pokemon Ivisaur">
+                    </div>
+                    <div class="card-infor">
+                        <span class="pokemon-id">N° 2</span>
+                        <h3>Ivisaur</h3>
+                        <div class="card-types">
+                            <span class="grass">Planta</span>
+                            <span class="poison">Veneno</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="pokemon.html" class="card-pokemon">
+                    <div class="card-img">
+                        <img src="img/asset-pokemon/3.png"
+                            alt="Pokemon Venusaur">
+                    </div>
+                    <div class="card-infor">
+                        <span class="pokemon-id">N° 3</span>
+                        <h3>Venusaur</h3>
+                        <div class="card-types">
+                            <span class="grass">Planta</span>
+                            <span class="poison">Veneno</span>
+                        </div>
+                    </div>
+                </a>
+            </main>
+            <div class="container-filters">
+                <div class="filter-by-type">
+                    <span>Tipo</span>
+                    <div class="group-typ">
+                        <input type="checkbox" name id>
+                        <label for="grass">Planta</label>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
     </body>
 
 </html>

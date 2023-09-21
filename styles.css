@@ -1,0 +1,12 @@
+#mapa {
+    display: none;
+}
+
+/* Mostrar la sección de Pokedex por defecto */
+#pokedex {
+    display: block;
+}
+
+body {
+    font-family: "Helvetica", sans-serif;
+}
