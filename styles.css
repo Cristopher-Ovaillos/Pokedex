@@ -18,7 +18,7 @@
 
 /* Mostrar la sección de Pokedex por defecto */
 #pokedex {
-    display: block;/*none o block*/
+    display: none;/*none o block*/
 }
 
 body {
@@ -67,9 +67,11 @@ header form{
 }
 
 /*para el nav bar*/
-nav{
-    align-items: center;
+nav {
+    text-align: center; /* Centra horizontalmente los elementos hijos */
+    align-items: center; /* se puede eliminar esto, ya que solo se aplica a elementos flex */
 }
+
 ul li{
     display: inline-block;
   
