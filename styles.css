@@ -18,7 +18,7 @@
 
 /* Mostrar la sección de Pokedex por defecto */
 #pokedex {
-    display: none;/*none o block*/
+    display: block;/*none o block*/
 }
 
 body {
