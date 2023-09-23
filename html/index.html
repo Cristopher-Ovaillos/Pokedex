@@ -5,111 +5,50 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="styles.css">
+        <title>Principal</title>
+        <link rel="stylesheet" href="../css/styles.css">
     </head>
 
-    <body>
-        <header class="container">
-            <a href="/" class="logo">
-                <img src="img/Pokédex_logo.png" alt="logo pokedex">
-            </a>
-            <form>
-                <div class="form-group">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                        viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="icon-search">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-                    </svg>
-                    <input type="search" placeholder="buscar nombre de pokemon">
-                </div>
-                <button class="btn-search">buscar</button>
-            </form>
+    <body class="light-mode normal">
+
+        <header>
+            <div class="logo">
+                <a href="/" class="logo">
+                    <img src="../img/pokemon logo.png" alt="logo pokedex">
+                </a>
+            </div>
+            <div class="container-nav">
+                <nav class="nav-barra">
+                    <ul>
+                        <li>
+                            <a href="../html/index.html">Pokedex</a>
+                        </li>
+                        <li>
+                            <a href="../html/region.html">Región</a>
+                        </li>
+                        <li>
+                            <a href>Build</a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
         </header>
-        <nav>
-            <ul>
-                <li><a href="#pokedex">Pokedex</a></li>
-                <li><a href="#mapa">Mapa</a></li>
-            </ul>
-
-        </nav>
-        <section id="pokedex">
-            <div class="container-filter container">
-                <div class="icon-filter">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                        viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor"
-                        class="icon">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
-                    </svg>
-
-                </div>
-                <span>Filtrar</span>
+        <div class="container-cloud">
+            <div class="cloud">
             </div>
-            <main class="card-list-pokemon container">
-                <a href="pokemon.html" class="card-pokemon">
-                    <div class="card-img">
-                        <img src="img/asset-pokemon/1.png"
-                            alt="Pokemon Bulbasaur">
-                    </div>
-                    <div class="card-infor">
-                        <span class="pokemon-id">N° 1</span>
-                        <h3>Bulbasaur</h3>
-                        <div class="card-types">
-                            <span class="grass">Planta</span>
-                            <span class="poison">Veneno</span>
-                        </div>
-                    </div>
-                </a>
-                <a href="pokemon.html" class="card-pokemon">
-                    <div class="card-img">
-                        <img src="img/asset-pokemon/2.png" alt="Pokemon Ivisaur">
-                    </div>
-                    <div class="card-infor">
-                        <span class="pokemon-id">N° 2</span>
-                        <h3>Ivisaur</h3>
-                        <div class="card-types">
-                            <span class="grass">Planta</span>
-                            <span class="poison">Veneno</span>
-                        </div>
-                    </div>
-                </a>
-                <a href="pokemon.html" class="card-pokemon">
-                    <div class="card-img">
-                        <img src="img/asset-pokemon/3.png"
-                            alt="Pokemon Venusaur">
-                    </div>
-                    <div class="card-infor">
-                        <span class="pokemon-id">N° 3</span>
-                        <h3>Venusaur</h3>
-                        <div class="card-types">
-                            <span class="grass">Planta</span>
-                            <span class="poison">Veneno</span>
-                        </div>
-                    </div>
-                </a>
-            </main>
-            <div class="container-filters">
-                <div class="filter-by-type">
-                    <span>Tipo</span>
-                    <div class="group-typ">
-                        <input type="checkbox" name id>
-                        <label for="grass">Planta</label>
-                    </div>
-                    <div class="group-typ">
-                        <input type="checkbox" name id>
-                        <label for="fire">Fuego</label>
-                    </div>
-                    <div class="group-typ">
-                        <input type="checkbox" name id>
-                        <label for="water">Agua</label>
-                    </div>
+        </div>
+        
 
-                </div>
+        <div class="container-pokebola">
+            <div class="panel" id="panel">
+                <img src="../img/pikachu.png" alt>
+                <img src="../img/gengar.png" alt>
             </div>
-        </section>
+
+            <img class="pokebola" id="pokebola" src="../img/pokebola.png" alt>
+
+        </div>
 
     </body>
 
