@@ -54,7 +54,6 @@ header {
 }
 .container-nav {
     padding: 5px 10%;
-    
 }
 
 
@@ -85,8 +84,7 @@ header {
 }
 
 .container-nav ul li a{
-    
-    color: black;
+
     text-decoration: none;
 }
 .container-nav nav ul li a:hover{
