@@ -1,7 +1,7 @@
 const containerCards = document.querySelector('#cards-container');
 
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('../pokemons.json')
+    fetch('../pokedex/pokemons.json')
         .then(data => {
             return data.json()
         })
