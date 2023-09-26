@@ -22,16 +22,7 @@ body {
     display: flex; /* Agrega display: flex; para habilitar flexbox */
     justify-content: flex-start; /* Alinea los elementos en el inicio del contenedor */
 }
-.container-nav {
-    width: 90%; /* Ocupa todo el ancho de la ventana */
-    display: flex; /* Agrega display: flex; para habilitar flexbox */
-    justify-content: space-around; /* Alinea los elementos en el inicio del contenedor */
-    background-color: white;
-    margin-bottom: 20px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
-    border-radius: 15px; /* Establece un valor de borde redondeado, ajusta según desees */
 
-}
 
 .logo {
     display: inline;
@@ -54,14 +45,13 @@ body {
     align-items: center;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
     border-radius: 15px;
-    border-bottom: 5%;
+  
   
 }
 .nav-barra ul{
     display: flex;
     justify-content: space-around;
     gap: 200px;
-    width: 150px;
     list-style: none;
 }
 
