@@ -1,5 +1,28 @@
 @import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
-
+:root{
+    --color-fire: #ff7402;
+	--color-grass: #9bcc50;
+	--color-steel: #9eb7b8;
+	--color-water: #4592c4;
+	--color-psychic: #f366b9;
+	--color-ground: #ab9842;
+	--color-ice: #51c4e7;
+	--color-flying: #3dc7ef;
+	--color-ghost: #4d5b64;
+	--color-normal: #a4acaf;
+	--color-poison: #7e0058;
+	--color-rock: #a38c21;
+	--color-fighting: #d56723;
+	--color-dark: #707070;
+	--color-bug: #729f3f;
+	--color-dragon: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
+	--color-electric: #bba909;
+	--color-fairy: #fdb9e9;
+	--color-shadow: #7b62a3;
+	--color-unknow: #757575;
+	--color-primary: #006d77;
+	--color-primary-hover: #83c5be;
+}
 /* Selector universal que selecciona todos los elementos */
 * {
     font-family: 'Montserrat', sans-serif;
@@ -17,16 +40,125 @@ body {
     height: 100vh; /* Esto asegura que el body ocupe toda la altura de la ventana */
   
 }
+header{
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0px 100px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   /*z-index: 100;*/
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    
+}
+header form{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+}
+.form-group{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #555;
+    padding: 15px 20px;
+    border-radius:25px ;
+}
+.form-group input{
+    font-family: inherit;
+    width: 300px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+.icon-search{
+    width: 20px;
+    height: 20px;
+    stroke: #555;
+}
+.btn-search{
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    font-family: inherit;
+    padding: 15px 30px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+/*
+.form-group{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #555;
+    padding: 15px 20px;
+    border-radius:25px ;
+}
+*/
+.logo{
+    width: 250px;
+    height: 100%;
+}
+ .navigation ul{
+   display: flex;
+   gap: 100px;
+    list-style: none;
+    
+
+ }
+ .navigation ul li a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-decoration: none;
+    gap: 5px;
+    color: rgb(58, 55, 55);
+}
+.navigation ul li a .icon{
+    opacity: 0.7;
+    font-size: 50px;
+    transition: ease 0.25s;
+    
+}
+.navigation ul li a .text{
+    transition: ease 0.25s;
+    font-weight: 500;
+}
+
+.navigation ul li:hover a .text {
+    color: rgb(223, 79, 12);
+    transform: translateY(-8px);
+  
+}
+.navigation ul li:hover a .icon {
+    color: rgb(223, 79, 12);
+    transform: translateY(-8px);
+    transform: rotate(360deg) ;
+}
+
+
+
+/*
 .container-header {
-    width: 90%;
-    display: flex; /* Agrega display: flex; para habilitar flexbox */
-    justify-content: flex-start; /* Alinea los elementos en el inicio del contenedor */
+    width: 100%;
+    display: flex; 
+    justify-content: space-between; 
+    background-color: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 
 .logo {
     display: inline;
     justify-content: flex-start;
+    
 }
 
 .logo img {
@@ -48,6 +180,7 @@ body {
   
   
 }
+
 .nav-barra ul{
     display: flex;
     justify-content: space-around;
@@ -69,6 +202,7 @@ body {
      opacity: 0.7;
      font-size: 50px;
      transition: ease 0.25s;
+     
  }
 
  .nav-barra ul li a .text{
@@ -76,14 +210,18 @@ body {
     font-weight: 500;
 }
 
-.nav-barra ul li:hover a .icon, .nav-barra ul li:hover a .text {
+.nav-barra ul li:hover a .text {
     color: rgb(223, 79, 12);
     transform: translateY(-8px);
+  
+}
+.nav-barra ul li:hover a .icon {
+    color: rgb(223, 79, 12);
+    transform: translateY(-8px);
+    transform: rotate(360deg) ;
 }
 
-
-
-
+*/
 
 /*
      <div class="container-pokebola">

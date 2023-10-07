@@ -1,20 +1,20 @@
-/* estilos para el index.html*/
+@import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
+
 .chansey-ic{
     filter: drop-shadow(5px 5px 10px #555);
 }
 
-.seccion{
-    
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: center; /* Centra los elementos verticalmente */
+.seccion { 
     width: 90%;
     background-color: white;
     height: 90vh;
+    margin-top: 40px; /* Aumenta el margen superior para mayor separación */
     margin-bottom: 20px;
+    
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
     border-radius: 15px;
     border-bottom: 5%;
+}
+h1{
+    font-family: 'Montserrat';
 }
