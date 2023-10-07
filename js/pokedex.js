@@ -1,7 +1,7 @@
 const containerCards = document.querySelector('#cards-container');
 
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('../pokedex/pokemons.json')
+    fetch('../Pokedex/pokemons.json')
         .then(data => {
             return data.json()
         })
@@ -18,17 +18,21 @@ function mostrarCards(datos) {
         let card = document.createElement('div');
         card.className = 'pokemon-card';
 
+        let containerImgPokemon = document.createElement('div');
+        containerImgPokemon.className = "container-img-pk";
+
         let img = document.createElement('img');
         img.src = '../img/asset-pokemon/'+getImagen(pokemon.id)+'.png';
 
         let name = document.createElement('h2');
         name.textContent = pokemon.nombre;
 
-        let tipos = document.createElement('p');
-
+        containerImgPokemon.appendChild(img)
+        // let tipos = document.createElement('p');
+        card.appendChild(containerImgPokemon);
+        // card.appendChild(img);
         card.appendChild(name);
-        card.appendChild(img);
-        card.appendChild(tipos);
+    
 
         containerCards.appendChild(card);
     })
