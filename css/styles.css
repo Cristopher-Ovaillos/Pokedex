@@ -38,19 +38,21 @@ body {
     flex-direction: column; /* Cambiar la dirección del flujo de columnas para apilar elementos */
     align-items: center; /* Centrar horizontalmente */
     height: 100vh; /* Esto asegura que el body ocupe toda la altura de la ventana */
-    gap: 25px;
+  
 }
 header{
+    top: 0;
+    left: 0;
     width: 100%;
     padding: 0px 100px;
     background: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
+   /*z-index: 100;*/
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
-
+    
 }
-
 header form{
     display: flex;
     align-items: center;
@@ -89,16 +91,6 @@ header form{
     color: #fff;
 }
 
-/*
-.form-group{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border: 1px solid #555;
-    padding: 15px 20px;
-    border-radius:25px ;
-}
-*/
 .logo{
     width: 250px;
     height: 100%;
@@ -132,103 +124,11 @@ header form{
 
 .navigation ul li:hover a .text {
     color: rgb(223, 79, 12);
-    transform: translateY(-4px);
+    transform: translateY(-8px);
   
 }
 .navigation ul li:hover a .icon {
     color: rgb(223, 79, 12);
-    transform: translateY(-4px);
-    transform: rotate(360deg) ;
-}
-
-
-
-/*
-.container-header {
-    width: 100%;
-    display: flex; 
-    justify-content: space-between; 
-    background-color: white;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-
-.logo {
-    display: inline;
-    justify-content: flex-start;
-    
-}
-
-.logo img {
-    width: 250px;
-    height: 100%;
-}
-
-.nav-barra {
-    width: 90%;
-    margin: 20px 0;
-    padding-top: 18px;
-    padding-bottom: 12px;
-    background-color: white;
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
-    border-radius: 15px;
-  
-  
-}
-
-.nav-barra ul{
-    display: flex;
-    justify-content: space-around;
-    gap: 200px;
-    list-style: none;
-}
-
- .nav-barra ul li a{
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     flex-direction: column;
-     text-decoration: none;
-     gap: 5px;
-     color: rgb(58, 55, 55);
- }
-
- .nav-barra ul li a .icon{
-     opacity: 0.7;
-     font-size: 50px;
-     transition: ease 0.25s;
-     
- }
-
- .nav-barra ul li a .text{
-    transition: ease 0.25s;
-    font-weight: 500;
-}
-
-.nav-barra ul li:hover a .text {
-    color: rgb(223, 79, 12);
-    transform: translateY(-8px);
-  
-}
-.nav-barra ul li:hover a .icon {
-    color: rgb(223, 79, 12);
     transform: translateY(-8px);
     transform: rotate(360deg) ;
 }
-
-*/
-
-/*
-     <div class="container-pokebola">
-            <div class="panel" id="panel">
-                <img src="../img/pikachu.png" alt>
-                <img src="../img/gengar.png" alt>
-            </div>
-
-            <img class="pokebola" id="pokebola" src="../img/pokebola.png" alt>
-
-        </div>
-*/

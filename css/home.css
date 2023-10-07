@@ -1,20 +1,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
 
-.chansey-ic{
-    filter: drop-shadow(5px 5px 10px #555);
-}
 
-.seccion { 
-    width: 90%;
+
+.contenido-info { 
+    
+    width: 70%;
     background-color: white;
-    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
     margin-top: 40px; /* Aumenta el margen superior para mayor separación */
     margin-bottom: 20px;
-    
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
     border-radius: 15px;
     border-bottom: 5%;
+
 }
 h1{
-    font-family: 'Montserrat';
+    font-family: 'Fascinate', cursive;
+    font-size:56px;
+    
+    color: orange; /* Cambia el color del texto a naranja */
+    -webkit-text-stroke: 2px darkorange; /* Agrega un borde de 2 píxeles de ancho en color naranja oscuro (para navegadores webkit) */
+    
+
 }
+h2{
+    font-family: 'Fascinate', cursive;
+    font-size: 36px;
+}
+p {
+    font-size: 26px; /* Cambia el tamaño de la fuente de todos los párrafos a 16 píxeles */
+}
+.contenido-info article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+    background-color: azure;
+    padding: 15px 20px;
+    
+}
+.contenido-info article img{
+    width: 350px;
+    height: 100%;
+    filter: drop-shadow(5px 5px 10px #555);
+    
+}
+.contenido-info article aside {
+    display: flex;
+    justify-content: center;
+}
+
+
