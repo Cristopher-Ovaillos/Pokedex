@@ -52,4 +52,6 @@ p {
     justify-content: center;
 }
 
-
+#nav-inicio a {
+    color: rgb(223, 79, 12);
+}
