@@ -1,4 +1,7 @@
 # Web_Pokemon 
 
 
-Secciones_web(Pokedex, Regiones)
+LIVE PREVIEW
+https://cristopher-ovaillos.github.io/Web_Pokemon/
+
+
