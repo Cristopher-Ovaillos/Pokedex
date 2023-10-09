@@ -35,15 +35,12 @@
 }
 
 body {
-    background: url(../img/fondo.jpg) no-repeat center center fixed;
-    background-size: cover;
+    background: url(../img/mode-1.png) ;
+    background-repeat: repeat;
     display: flex;
     flex-direction: column;
-    /* Cambiar la dirección del flujo de columnas para apilar elementos */
     align-items: center;
-    /* Centrar horizontalmente */
-    height: 100vh;
-    /* Esto asegura que el body ocupe toda la altura de la ventana */
+ 
 
 }
 
@@ -99,7 +96,7 @@ header form {
     padding: 15px 30px;
     cursor: pointer;
     letter-spacing: 2px;
-    background-color: var(--color-primary);
+    background-color:  rgb(236, 82, 82);
     color: #fff;
 }
 
