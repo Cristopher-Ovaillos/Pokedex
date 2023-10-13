@@ -78,6 +78,9 @@ p {
     justify-content: center;
 }
 */
-#nav-inicio a {
+
+#nav-inicio .icon,
+#nav-inicio .text {
     color: rgb(223, 79, 12);
 }
+
