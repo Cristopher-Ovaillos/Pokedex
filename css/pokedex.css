@@ -1,143 +1,6 @@
-:root {
-    --color-fire: #ff7402;
-    --color-grass: #9bcc50;
-    --color-steel: #9eb7b8;
-    --color-water: #4592c4;
-    --color-psychic: #f366b9;
-    --color-ground: #ab9842;
-    --color-ice: #51fff0;
-    --color-flying: #3dc7ef;
-    --color-ghost: #753a79;
-    --color-normal: #a4acaf;
-    --color-poison: #882869;
-    --color-rock: #a38c21;
-    --color-fighting: #d56723;
-    --color-dark: #707070;
-    --color-bug: #729f3f;
-    --color-dragon: linear-gradient(to bottom, #8859f5, #e0e0e0);
-    --color-electric: #bba909;
-    --color-fairy: #fdb9e9;
-    --color-shadow: #7b62a3;
-    --color-unknow: #757575;
-    --color-primary: #006d77;
-    --color-primary-hover: #83c5be;
-}
-
-/*Estilos segun tipo*/
-
-div.fire.pokemon-card,
-div.fire.pokemon-card .card-container-name {
-    background-color: var(--color-fire);
-}
-
-div.grass.pokemon-card,
-div.grass.pokemon-card .card-container-name {
-    background-color: var(--color-grass);
-}
-
-
-div.steel.pokemon-card,
-div.steel.pokemon-card .card-container-name {
-    background-color: var(--color-steel);
-}
-
-div.water.pokemon-card,
-div.water.pokemon-card .card-container-name {
-    background-color: var(--color-water);
-}
-
-div.psychic.pokemon-card,
-div.psychic.pokemon-card .card-container-name {
-    background-color: var(--color-psychic);
-}
-div.ground.pokemon-card,
-div.ground.pokemon-card .card-container-name {
-    background-color: var(--color-ground);
-}
-div.ice.pokemon-card,
-div.ice.pokemon-card .card-container-name {
-    background-color: var(--color-ice);
-}
-div.flying.pokemon-card,
-div.flying.pokemon-card .card-container-name {
-    background-color: var(--color-flying);
-}
-
-
-
-
-div.ghost.pokemon-card,
-div.ghost.pokemon-card .card-container-name {
-    background-color: var(--color-ghost);
-}
-div.normal.pokemon-card,
-div.normal.pokemon-card .card-container-name {
-    background-color: var(--color-normal);
-}
-div.poison.pokemon-card,
-div.poison.pokemon-card .card-container-name {
-    background-color: var(--color-poison);
-}
-
-div.rock.pokemon-card,
-div.rock.pokemon-card .card-container-name {
-    background-color: var(--color-rock);
-}
-
-div.fighting.pokemon-card,
-div.fighting.pokemon-card .card-container-name {
-    background-color: var(--color-fighting);
-}
-
-div.dark.pokemon-card,
-div.dark.pokemon-card .card-container-name {
-    background-color: var(--color-dark);
-}
-
-div.bug.pokemon-card,
-div.bug.pokemon-card .card-container-name {
-    background-color: var(--color-bug);
-}
-
-div.dragon.pokemon-card,
-div.dragon.pokemon-card .card-container-name {
-    background: var(--color-dragon);
-}
-
-div.electric.pokemon-card,
-div.electric.pokemon-card .card-container-name {
-    background-color: var(--color-electric);
-}
-
-div.fairy.pokemon-card,
-div.fairy.pokemon-card .card-container-name {
-    background-color: var(--color-fairy);
-}
-
-div.shadow.pokemon-card,
-div.shadow.pokemon-card .card-container-name {
-    background-color: var(--color-shadow);
-}
-
-div.unknown.pokemon-card,
-div.unknown.pokemon-card .card-container-name {
-    background-color: var(--color-unknown);
-}
-
-
-
-
-#cards-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: center;
-    gap: 1em;
-    padding: 50px 0;
-}
-
 
 .seccion-pokedex {
-    width: 80%;
+    width: 90%;
     background-color: white;
     margin-top: 40px;
     /* Aumenta el margen superior para mayor separación */
@@ -147,58 +10,79 @@ div.unknown.pokemon-card .card-container-name {
     border-bottom: 5%;
 }
 
-.container-img-pk {
-    background-color: rgba(241, 241, 241, 0.747);
-    background-size: cover;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    padding-bottom: 10px;
+#cards-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    gap: 1em;
+    padding: 20px 0;
 }
-
 
 .pokemon-card {
     position: relative;
     display: flex;
     flex-direction: column;
-    border-radius: 16px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
-    padding: 10px;
+    align-items: flex-start;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+    padding: 5px;
     margin: 15px 0px;
 }
 
-.card-container-name h2 {
-    background-color: rgb(77, 77, 77);
-    text-transform: capitalize;
-    border-radius: 5px;
-    padding: 7px;
-    overflow: hidden;
-    /* Evita que el texto rebase el contenedor */
-    font-size: large;
-    color: white;
-    font-weight: bolder;
+
+.container-img-pk {
+    background-color: rgba(241, 241, 241, 0.747);
+    background-size: cover;
+    border-radius: 8px;
+    padding-bottom: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.container-img-pk img {
+    width: 70px;
 }
 
 .card-container-name {
-
+    padding: 0;
+    padding-top: 4px;
+    padding-right: 4px;
     border-top-right-radius: 5px;
-    padding-right: 8px;
-    padding-top: 8px;
     display: block;
     text-align: center;
     position: relative;
-    top: -25px;
-    max-width: 70%;
-
+    min-width: 70%;
+    max-width: 80%;
+    top: -15px;
+   
 }
+
+.card-container-name h2 {
+   
+    text-transform: capitalize;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0;
+    overflow: hidden;
+    /* Evita que el texto rebase el contenedor */
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    font-size: 7px;
+    word-wrap: break-word;
+    background-color: rgb(77, 77, 77);
+    color: white;
+}
+
 
 .card-tipos {
     display: flex;
+    width: 100%;
     justify-content: space-around;
+    font-size: 5px;
 }
 
 .card-tipos span {
-    display: flex;
-    justify-content: space-around;
     text-transform: capitalize;
 }
 
@@ -206,14 +90,57 @@ div.unknown.pokemon-card .card-container-name {
     color: rgb(223, 79, 12);
 }
 
+@media screen and (max-width:370px) {
+    #cards-container {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media screen and (min-width: 576px) {
+    #cards-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .pokemon-card {
+        /* Para acomodar al inicio el nombre */
+        align-items: flex-start; 
+        padding: 15px;
+        border-radius: 16px;
+    }
+
+    .card-container-name h2 {
+        font-size: medium;
+        background-color: rgb(77, 77, 77);
+        color: white;
+        padding: 8px;
+        letter-spacing: 0;
+    }
+    
+    .card-container-name {
+        padding-right: 15x;
+        padding-top: 10px;
+        top: -25px;
+        max-width: 75%;
+    
+    }
+
+    .container-img-pk {
+        padding: 0;
+        padding-bottom: 10px;
+    }
+   
+    
+    .container-img-pk img {
+        width: 180px;
+    }
+    
+    .card-tipos {
+        font-size: 15px;
+    }
    
 }
 
 @media screen and (min-width: 768px)  {
-    #cards-container {
-        grid-template-columns: 1fr 1fr;
-    }
 }
 
 @media screen and (min-width: 992px)  {

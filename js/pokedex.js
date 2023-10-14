@@ -1,7 +1,42 @@
 const containerCards = document.querySelector('#cards-container');
+const colores = {
+    fire: "#ff7402",
+    grass: "#9bcc50",
+    steel: "#9eb7b8",
+    water: "#4592c4",
+    psychic: "#f366b9",
+    ground: "#ab9842",
+    ice: "#51fff0",
+    flying: "#3dc7ef",
+    ghost: "#753a79",
+    normal: "#a4acaf",
+    poison: "#882869",
+    rock: "#a38c21",
+    fighting: "#d56723",
+    dark: "#707070",
+    bug: "#729f3f",
+    dragon: "linear-gradient(to bottom, #8859f5, #e0e0e0)",
+    electric: "#f8e325",
+    fairy: "#fdb9e9",
+    shadow: "#7b62a3"
+};
+
+function agregarColoresCards() {
+    var styles = document.createElement('style');
+    styles.textContent = '';
+    
+    for (var key in colores) {
+        var css = `div.${key}.pokemon-card, div.${key}.pokemon-card .card-container-name { background: ${colores[key]}; }\n`;
+        styles.textContent += css;
+    }
+
+    document.head.appendChild(styles);
+}
+
 
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('../Pokedex/pokemons.json')
+    agregarColoresCards(); // inserta en css todos los posibles colores
+    fetch('../Pokedex/pokemons.json') //obtiene la info de los pokemon
         .then(data => {
             return data.json()
         })
@@ -16,7 +51,8 @@ function mostrarCards(datos) {
     datos.forEach((pokemon) => {
 
         let card = document.createElement('div');
-        card.classList.add('pokemon-card', getColorPorTipo(pokemon.tipos))
+        card.classList.add('pokemon-card', getColorPorTipo(pokemon.tipos));
+        
 
         let containerImgPokemon = document.createElement('div');
         containerImgPokemon.className = "container-img-pk";
