@@ -5,7 +5,7 @@
 
 .contenido-info { 
     
-    width: 70%;
+    width: 90%;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -20,12 +20,11 @@
 }
 .contenido-info h1{
     font-family: 'Fascinate', cursive;
-    font-size:56px;
+    font-size:36px;
+    text-align: center;
     padding: 5px;
-    background-color: white;
-    color: rgb(207, 163, 81); /* Cambia el color del texto a naranja */
-    -webkit-text-stroke: 1px darkorange; /* Agrega un borde de 2 píxeles de ancho en color naranja oscuro (para navegadores webkit) */
-    border-radius: 25px;
+    color: rgb(255, 255, 255); /* Cambia el color del texto a naranja */
+    border-radius: 15px;
     margin: 1%;
     
 
@@ -34,27 +33,24 @@
     font-family: 'Fascinate', cursive;
     font-size:30px;
     padding: 5px;
-    background-color: white;
-    color: rgb(207, 163, 81); /* Cambia el color del texto a naranja */
-    -webkit-text-stroke: 1px darkorange; /* Agrega un borde de 2 píxeles de ancho en color naranja oscuro (para navegadores webkit) */
+    text-align: center;
+    color: rgb(255, 255, 255); /* Cambia el color del texto a naranja */
     border-radius: 25px;
     margin: 1%;
     
 
 }
-h2{
+.contenido-info article section h2{
+    text-align: center;
     font-family: 'Fascinate', cursive;
-    font-size: 36px;
-    color: rgb(207, 163, 81); /* Cambia el color del texto a naranja */
-    -webkit-text-stroke: 1px darkorange; /* Agrega un borde de 2 píxeles de ancho en color naranja oscuro (para navegadores webkit) */
+    color: rgb(207, 163, 81);
+    -webkit-text-stroke: 1px rgb(163, 102, 28);
 }
+
 p {
-    font-size: 26px; /* Cambia el tamaño de la fuente de todos los párrafos a 16 píxeles */
+    font-size: 15px; /* Cambia el tamaño de la fuente de todos los párrafos a 16 píxeles */
 }
 .contenido-info article {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    
     background-color: azure;
     padding: 15px 20px;
     
@@ -84,3 +80,15 @@ p {
     color: rgb(223, 79, 12);
 }
 
+@media screen and (max-width:370px) {
+}
+@media screen and (min-width: 576px) {
+}
+
+@media screen and (min-width: 768px)  {
+}
+@media screen and (min-width: 992px)  {
+}
+
+@media (min-width: 1400px) {
+}
