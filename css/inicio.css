@@ -40,6 +40,11 @@
     
 
 }
+.contenido-info img{
+    width: 100%;
+    background-color: azure;
+    gap: 2px;
+}
 .contenido-info article section h2{
   
     text-align: center;
