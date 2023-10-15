@@ -4,11 +4,11 @@
 
 
 .contenido-info { 
-    
     width: 90%;
     background-color: white;
     display: flex;
     flex-direction: column;
+
     align-items: center; /* Centra horizontalmente */
     margin-top: 40px; /* Aumenta el margen superior para mayor separación */
     margin-bottom: 20px;
@@ -41,6 +41,7 @@
 
 }
 .contenido-info article section h2{
+  
     text-align: center;
     font-family: 'Fascinate', cursive;
     color: rgb(207, 163, 81);
@@ -51,8 +52,10 @@ p {
     font-size: 15px; /* Cambia el tamaño de la fuente de todos los párrafos a 16 píxeles */
 }
 .contenido-info article {
+    width: 100%;
     background-color: azure;
     padding: 15px 20px;
+   
     
 }
 .contenido-info article img{
