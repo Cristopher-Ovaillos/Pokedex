@@ -84,3 +84,7 @@ p {
     color: rgb(223, 79, 12);
 }
 
+#theme {
+    width: 80px;
+    border-radius: 100%;
+}
