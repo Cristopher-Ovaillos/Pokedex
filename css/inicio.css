@@ -70,12 +70,7 @@ p {
     object-fit: contain;
     
 }
-.contenido-info article summary{
-   background-color: white;
-   border: 1px solid  #555;
-   border-radius: 25px;
-  
-}
+
 /*
 .contenido-info article aside {
     display: flex;

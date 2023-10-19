@@ -1,3 +1,59 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
 #nav-region {
     color: rgb(223, 79, 12);
+}
+
+.contenido-info{ 
+    width: 90%;
+ 
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    margin-top: 40px; /* Aumenta el margen superior para mayor separación */
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    border-bottom: 5%;
+    background-color: rgb(236, 82, 82);
+}
+.contenido-info h1{
+    font-family: 'Fascinate', cursive;
+    font-size:36px;
+    text-align: center;
+    padding: 5px;
+    color: rgb(255, 255, 255); /* Cambia el color del texto a naranja */
+    border-radius: 15px;
+    margin: 1%;
+    
+
+}
+.container-ciudad{
+    width: 100%;
+    background-color: white;
+    
+    display: flex;
+    flex-direction: column;
+}
+.contenido-map {
+    width: 100%; /* Ancho del 100% para adaptarse al contenedor */
+    max-width: 400px; /* Ancho máximo para dispositivos móviles (ajusta según tus necesidades) */
+    overflow: auto; /* Agrega barras de desplazamiento si es necesario */
+  }
+.container-map img{
+    padding: 15px 20px;
+    
+}
+.container-ciudad   h2{
+  
+    text-align: center;
+    font-family: 'Fascinate', cursive;
+    color: rgb(207, 163, 81);
+    -webkit-text-stroke: 1px rgb(163, 102, 28);
+}
+.container-ciudad  section {
+    padding: 15px 20px;
+}
+.container-ciudad section img{
+    
 }
