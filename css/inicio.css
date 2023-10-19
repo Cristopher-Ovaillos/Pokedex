@@ -46,7 +46,7 @@
     gap: 2px;
 }
 .contenido-info article section h2{
-  
+    font-size: 35px;
     text-align: center;
     font-family: 'Fascinate', cursive;
     color: rgb(207, 163, 81);
@@ -54,8 +54,10 @@
 }
 
 p {
-    font-size: 15px; /* Cambia el tamaño de la fuente de todos los párrafos a 16 píxeles */
+    font-size: 25px; /* Cambia el tamaño de la fuente de todos los párrafos a 16 píxeles */
 }
+
+
 .contenido-info article {
     width: 100%;
     background-color: azure;
@@ -63,19 +65,24 @@ p {
    
     
 }
-.contenido-info article img{
-    width: 350px;
-    height: 100%;
+.contenedorImagen  img{
+    width: 60%;
+    height: auto;
     filter: drop-shadow(5px 5px 10px #555);
-    object-fit: contain;
+    border: 2px solid rgb(206, 133, 45);
+    border-radius: 5%;
+
     
 }
-.contenido-info article summary{
-   background-color: white;
-   border: 1px solid  #555;
-   border-radius: 25px;
-  
+
+.contenedorImagen {
+    background-color: aliceblue;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
+
+
 /*
 .contenido-info article aside {
     display: flex;
