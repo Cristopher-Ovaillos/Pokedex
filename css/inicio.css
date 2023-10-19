@@ -95,15 +95,7 @@ p {
     color: rgb(223, 79, 12);
 }
 
-@media screen and (max-width:370px) {
-}
-@media screen and (min-width: 576px) {
-}
-
-@media screen and (min-width: 768px)  {
-}
-@media screen and (min-width: 992px)  {
-}
-
-@media (min-width: 1400px) {
+#theme {
+    width: 80px;
+    border-radius: 100%;
 }

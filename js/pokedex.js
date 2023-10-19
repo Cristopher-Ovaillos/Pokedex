@@ -22,11 +22,11 @@ const colores = {
 };
 
 function agregarColoresCards() {
-    var styles = document.createElement('style');
+    let styles = document.createElement('style');
     styles.textContent = '';
     
-    for (var key in colores) {
-        var css = `div.${key}.pokemon-card, div.${key}.pokemon-card .card-container-name { background: ${colores[key]}; }\n`;
+    for (let key in colores) {
+        let css = `div.${key}.pokemon-card, div.${key}.pokemon-card .card-container-name { background: ${colores[key]}; }\n`;
         styles.textContent += css;
     }
 

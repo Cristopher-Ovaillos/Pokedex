@@ -12,7 +12,7 @@
 
 #cards-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     justify-items: center;
     gap: 1em;
     padding: 20px 0;
@@ -24,6 +24,7 @@
     flex-direction: column;
     align-items: flex-start;
     border-radius: 10px;
+    background-color: rgb(34, 34, 34);
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
     padding: 5px;
     margin: 15px 0px;
@@ -40,7 +41,7 @@
 }
 
 .container-img-pk img {
-    width: 70px;
+    width: 80px;
 }
 
 .card-container-name {
@@ -68,7 +69,7 @@
     /* Evita que el texto rebase el contenedor */
     font-weight: bold;
     letter-spacing: 0.5px;
-    font-size: 7px;
+    font-size: 8px;
     word-wrap: break-word;
     background-color: rgb(77, 77, 77);
     color: white;
@@ -90,15 +91,22 @@
     color: rgb(223, 79, 12);
 }
 
-@media screen and (max-width:370px) {
+@media screen and (min-width:230px) {
     #cards-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 }
 
+@media screen and (min-width:370px) {
+    #cards-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+
 @media screen and (min-width: 576px) {
     #cards-container {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr ;
     }
     
     .pokemon-card {
@@ -117,7 +125,7 @@
     }
     
     .card-container-name {
-        padding-right: 15x;
+        padding-right: 10px;
         padding-top: 10px;
         top: -25px;
         max-width: 75%;
@@ -125,13 +133,14 @@
     }
 
     .container-img-pk {
-        padding: 0;
+        padding-left: 8px;
+        padding-right: 8px;
         padding-bottom: 10px;
     }
    
     
     .container-img-pk img {
-        width: 180px;
+        width: 160px;
     }
     
     .card-tipos {
@@ -147,10 +156,14 @@
     #cards-container {
         grid-template-columns: 1fr 1fr 1fr;
     }
+    .container-img-pk img {
+        width: 200px;
+    }
 }
 
 @media (min-width: 1400px) {
     #cards-container {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
+
 }
