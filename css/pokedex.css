@@ -1,3 +1,6 @@
+#nav-pokedex {
+    color: rgb(223, 79, 12);
+}
 
 .seccion-pokedex {
     width: 90%;
@@ -87,9 +90,9 @@
     text-transform: capitalize;
 }
 
-#nav-pokedex  {
-    color: rgb(223, 79, 12);
-}
+
+
+
 
 @media screen and (min-width:230px) {
     #cards-container {

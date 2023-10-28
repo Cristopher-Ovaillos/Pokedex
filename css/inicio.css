@@ -90,8 +90,7 @@ p {
 }
 */
 
-#nav-inicio .icon,
-#nav-inicio .text {
+#nav-inicio {
     color: rgb(223, 79, 12);
 }
 

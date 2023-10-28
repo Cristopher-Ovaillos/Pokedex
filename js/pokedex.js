@@ -92,10 +92,13 @@ function mostrarCards(datos) {
     })
 }
 
+//obtiene el nombre de la clase para aplicar color
 function getColorPorTipo(tipos){
     //falta arreglar cuando son de 2 tipos
     return tipos[0];
 }
+
+//agrega ceros a la imagen para armar la ruta
 function getImagen(id){
     if (id < 100){
         id = (id < 10) ? '00'+id: '0'+id;
