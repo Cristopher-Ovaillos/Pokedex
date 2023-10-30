@@ -16,7 +16,7 @@ function load_header() {
     
                 <div class="collapse navbar-collapse" id="opcionesNav">
                     <div class="nav">
-                        <a id="nav-inicio" href="../index.html">
+                        <a id="nav-inicio" href="../html/index.html">
                             <span class="iconify icon" data-icon="ion:home-outline"></span>
                             <span class="text">inicio</span>
                         </a>
