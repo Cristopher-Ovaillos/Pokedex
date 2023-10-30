@@ -1,3 +1,4 @@
+loadTheme();
 
 function load_header() {
     let header = document.createElement("header");
@@ -29,6 +30,9 @@ function load_header() {
                         </a>
                     </div>
                 </div>
+                <div id="cambiarTheme">
+                    <div id="pokeball-button" class="light-theme"></div>
+                </div>
             </nav>
         `;
 
@@ -36,6 +40,38 @@ function load_header() {
     body.insertBefore(header, body.firstChild);
 }
 
+
 document.addEventListener("DOMContentLoaded", () => {
     load_header();
+    changeTheme();
 });
+
+//carga el theme a la pagina
+function loadTheme(){
+    const darkmode = localStorage.getItem('darkmode');
+    const body = document.querySelector('body');
+
+    //if the dark mode was never activated
+    if(darkmode === null){
+        storeTheme(false);
+    } else if( darkmode === 'true'){ //if the dark mode is activated
+        body.classList.add('darkmode');
+    } 
+
+}
+
+//agrego funcionalidad al boton
+function changeTheme(){
+    const btnTheme = document.querySelector("#pokeball-button")
+    const body = document.querySelector('body');
+
+    btnTheme.addEventListener('click', () =>{
+        body.classList.toggle('darkmode');
+        storeTheme(body.classList.contains('darkmode'));
+    })
+}
+
+//guardo en localstorage si el darkmode esta activado
+function storeTheme(value){
+    localStorage.setItem('darkmode', value);
+  }
