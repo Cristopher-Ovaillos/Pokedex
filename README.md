@@ -1,7 +1,7 @@
-# Web_Pokemon 
+# Web Pokemon 
 
+***
 
-LIVE PREVIEW
-https://cristopher-ovaillos.github.io/Web_Pokemon/
+## Live Preview: https://cristopher-ovaillos.github.io/Web_Pokemon/html/index.html
 
 
