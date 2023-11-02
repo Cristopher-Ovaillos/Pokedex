@@ -1,50 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
+:root {
+    --dark-color-seccion: rgb(62, 77, 117);
+    --text-color: #7ddfee;
+}
 
 
 
-.contenido-info { 
-    width: 90%;
-    background-color: white;
+
+
+.fuente-contenido{
+    width: 100%;
+    background-color: aliceblue;
     display: flex;
     flex-direction: column;
-
-    align-items: center; /* Centra horizontalmente */
-    margin-top: 40px; /* Aumenta el margen superior para mayor separación */
-    margin-bottom: 20px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
-    border-radius: 15px;
-    border-bottom: 5%;
-    background-color: rgb(236, 82, 82);
-
+    align-items: center; 
 }
-.contenido-info h1{
-    font-family: 'Fascinate', cursive;
-    font-size:36px;
-    text-align: center;
-    padding: 5px;
-    color: rgb(255, 255, 255); /* Cambia el color del texto a naranja */
-    border-radius: 15px;
-    margin: 1%;
-    
 
-}
-.contenido-info h3{
-    font-family: 'Fascinate', cursive;
-    font-size:30px;
-    padding: 5px;
-    text-align: center;
-    color: rgb(255, 255, 255); /* Cambia el color del texto a naranja */
-    border-radius: 25px;
-    margin: 1%;
-    
 
-}
-.contenido-info img{
+body.darkmode .fuente-contenido{
     width: 100%;
-    background-color: azure;
-    gap: 2px;
+    background-color: var(--dark-color-seccion);
 }
+
+.contenedorImagen img{
+    width: 60%;
+    height: auto;
+    filter: drop-shadow(5px 5px 10px #555);
+    border: 2px solid rgb(206, 133, 45);
+    border-radius: 5%;
+
+
+}
+body.darkmode .contenedorImagen img{
+    width: 60%;
+    height: auto;
+    filter: drop-shadow(5px 5px 10px #555);
+    border: 2px solid rgb(56, 45, 206);
+    border-radius: 5%;
+}
+
 .contenido-info article section h2{
     font-size: 35px;
     text-align: center;
@@ -53,50 +48,24 @@
     -webkit-text-stroke: 1px rgb(163, 102, 28);
 }
 
-p {
-    font-size: 25px; /* Cambia el tamaño de la fuente de todos los párrafos a 16 píxeles */
+body.darkmode .contenido-info article section h2{
+    font-size: 35px;
+    text-align: center;
+    font-family: 'Fascinate', cursive;
+    color: var(--text-color);
+    -webkit-text-stroke: 1px rgb(13, 12, 39);
 }
+
+body.darkmode .contenido-info article section p{
+    color: white;
+}
+
 
 
 .contenido-info article {
     width: 100%;
-    background-color: azure;
+    
     padding: 15px 20px;
-   
-    
+
+
 }
-.contenedorImagen  img{
-    width: 60%;
-    height: auto;
-    filter: drop-shadow(5px 5px 10px #555);
-    border: 2px solid rgb(206, 133, 45);
-    border-radius: 5%;
-
-    
-}
-
-.contenedorImagen {
-    background-color: aliceblue;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-
-/*
-.contenido-info article aside {
-    display: flex;
-    justify-content: center;
-}
-*/
-
-#nav-inicio {
-    color: rgb(223, 79, 12);
-}
-
-#theme {
-    width: 80px;
-    border-radius: 100%;
-}
-
-/* darkmode cambiar el color de la seccion y el de las letras a color blanco*/

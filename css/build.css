@@ -1,3 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
+:root {
+    --dark-color-seccion: rgb(62, 77, 117);
+    --text-color: #7ddfee;
+    --color-primary-hover: #83c5be;
+    --color-primary: #006d77;
+    --red-color:rgb(236, 82, 82);
+    --pink-color: rgb(255, 192, 203);
+}
 #nav-build {
     color: rgb(223, 79, 12);
+}
+
+
+
+.contenido-info td{
+    width: 100px; /* Establece un ancho mínimo para las celdas */
+    height: 100px; /* Establece una altura mínima para las celdas */
+    border: 1px solid #ccc; /* Agrega un borde para separar las celdas */
+    
+}
+
+body.darkmode .build-team{
+    background-color: var(--dark-color-seccion);
+    width: 100%;
+}
+
+.build-team{
+    background-color:aliceblue;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grid-pokemon {
+    border-spacing: 20px; 
+    border-collapse: separate;  
+    
+}
+.grid-pokemon td{
+    border: none; 
+    padding: 10px; 
+    border-radius: 10px; 
+    background-color: rgb(199, 216, 231);
+        width: 215px;
+        height:     215px;
+}
+body.darkmode .grid-pokemon td{
+    border: none; 
+    padding: 10px; 
+    border-radius: 10px; 
+    background-color: rgb(81, 149, 209);
+    width: 215px;
+    height:     215px;
+}
+
+.build-team form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.form-group{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+    padding: 15px 20px;
+    border-radius: 25px;
+   margin-top: 20px;
+   background-color: var(--pink-color);
+}
+
+body.darkmode .form-group{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+    padding: 15px 20px;
+    border-radius: 25px;
+   margin-top: 20px;
+   background-color: var(--color-primary-hover);
+}
+
+
+.form-group input{
+    font-family: inherit;
+    width: 300px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    background-color: var(--pink-color);
+    
+     
+
+}
+
+body.darkmode .form-group input{
+    font-family: inherit;
+    width: 300px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    background-color: var(--color-primary-hover);
+    
+     
+
+}
+
+
+.btn-search{
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-family: inherit;
+    padding: 15px 30px;/*separar el el texto de los bordes*/
+    cursor: pointer;
+    letter-spacing: 2px;
+    background-color: var(--red-color);
+    color: #fff;
+}
+
+
+body.darkmode .btn-search{
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-family: inherit;
+    padding: 15px 30px;/*separar el el texto de los bordes*/
+    cursor: pointer;
+    letter-spacing: 2px;
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+
+.btn-search:hover{
+    background-color: var(--pink-color);
+    color: #000;
+}
+
+body.darkmode .btn-search:hover{
+    background-color: var(--color-primary-hover);
+    color: #000;
 }

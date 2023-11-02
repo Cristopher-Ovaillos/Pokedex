@@ -1,7 +1,8 @@
 @import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
 
 :root {
-    --dark-color: rgb(38, 54, 95);
+    --dark-color: rgb(45, 45, 46);
+    --red-color:rgb(236, 82, 82)
 }
 
 /* Selector universal que selecciona todos los elementos */
@@ -64,13 +65,13 @@ header {
 }
 
 .nav a:hover .icon {
-    color: rgb(223, 79, 12);
+    color: var(--red-color);
     transform: rotate(360deg);
     transition: transform 0.3s;
 }
 
 .nav a:hover .text {
-    color: rgb(223, 79, 12);
+    color: var(--red-color);
     transform: translateY(-5px);
     /* Mueve el texto hacia arriba 5 píxeles */
     transition: transform 0.3s;
@@ -148,7 +149,57 @@ body.darkmode .nav a {
     background-color: var(--dark-color);
     box-shadow: 0 8px 40px rgba(0,0,0, .3);
 }
+.contenido-info { 
+    width: 90%;
+    background-color: var(--red-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    margin-top: 40px; /* Aumenta el margen superior para mayor separación */
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    border-bottom: 5%;
+    
 
+}
+
+body.darkmode .contenido-info { 
+    width: 90%;
+    background-color: var(--dark-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    margin-top: 40px; /* Aumenta el margen superior para mayor separación */
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    border-bottom: 5%;
+    
+
+}
+.contenido-info h1{
+    font-family: 'Fascinate', cursive;
+    font-size:36px;
+    text-align: center;
+    padding: 5px;
+    color: rgb(255, 255, 255); /* Cambia el color del texto a naranja */
+    border-radius: 15px;
+    margin: 1%;
+    
+
+}
+.contenido-info h3{
+    font-family: 'Fascinate', cursive;
+    font-size:30px;
+    padding: 5px;
+    text-align: center;
+    color: rgb(255, 255, 255); /* Cambia el color del texto a naranja */
+    border-radius: 25px;
+    margin: 1%;
+    
+
+}
 
 
 
