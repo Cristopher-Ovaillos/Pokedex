@@ -28,10 +28,10 @@ function load_header() {
                             <span class="iconify icon" data-icon="material-symbols:swords"></span>
                             <span class="text">Build</span>
                         </a>
+                        <div id="cambiarTheme">
+                            <div id="pokeball-button" class="light-theme"></div>
+                        </div>
                     </div>
-                </div>
-                <div id="cambiarTheme">
-                    <div id="pokeball-button" class="light-theme"></div>
                 </div>
             </nav>
         `;
@@ -62,7 +62,7 @@ function loadTheme(){
 
 //agrego funcionalidad al boton
 function changeTheme(){
-    const btnTheme = document.querySelector("#pokeball-button")
+    const btnTheme = document.querySelector("#cambiarTheme")
     const body = document.querySelector('body');
 
     btnTheme.addEventListener('click', () =>{

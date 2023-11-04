@@ -8,7 +8,6 @@
 
 
 
-
 .fuente-contenido{
     width: 100%;
     background-color: aliceblue;
@@ -68,4 +67,8 @@ body.darkmode .contenido-info article section p{
     padding: 15px 20px;
 
 
+}
+
+#nav-inicio {
+    color: var(--red-color);
 }
