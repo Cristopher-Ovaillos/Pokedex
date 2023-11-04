@@ -7,7 +7,7 @@ function load_header() {
     header.innerHTML = `
             <nav class="navbar navbar-expand-md">
                 <a class="navbar-brand">
-                    <img class="logo" src="../img/pokemon logo.png" alt="logo pokemon">
+                    <img class="logo" src="../img/pokemonLogo.png" alt="logo pokemon">
                 </a>
     
                 <button class="navbar-toggler btn-collapse" data-bs-toggle="collapse" data-bs-target="#opcionesNav" aria-controls="opcionesNav" aria-expanded="false">
@@ -64,9 +64,12 @@ function loadTheme(){
 function changeTheme(){
     const btnTheme = document.querySelector("#cambiarTheme")
     const body = document.querySelector('body');
+    const logo = document.querySelector('.logo');
 
     btnTheme.addEventListener('click', () =>{
-        body.classList.toggle('darkmode');
+
+        let activado = body.classList.toggle('darkmode');
+        logo.src = activado ?  '../img/pokemonLogoDark.png' : '../img/pokemonLogo.png';
         storeTheme(body.classList.contains('darkmode'));
     })
 }
