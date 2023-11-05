@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
+
 :root {
     --dark-color-seccion: rgb(62, 77, 117);
 }
@@ -22,7 +24,7 @@
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
-    gap: 1em;
+    gap: 0.5em;
     padding: 20px 0;
 }
 
@@ -43,9 +45,9 @@
     background-color: rgba(241, 241, 241, 0.747);
     background-size: cover;
     border-radius: 8px;
-    padding-bottom: 15px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .container-img-pk img {
@@ -54,24 +56,21 @@
 
 .card-container-name {
     padding: 0;
-    padding-top: 4px;
-    padding-right: 4px;
-    border-top-right-radius: 5px;
+    padding-top: 5px;
     display: block;
     text-align: center;
     position: relative;
-    min-width: 70%;
-    max-width: 80%;
-    top: -15px;
-   
+    width: 100%;
+    top: -10px;
 }
 
 .card-container-name h2 {
-   
+    display: inline-block;
+    width: 85%;
     text-transform: capitalize;
     text-align: center;
     border-radius: 5px;
-    padding: 5px;
+    padding: 4px 5px;
     margin: 0;
     overflow: hidden;
     /* Evita que el texto rebase el contenedor */
@@ -86,13 +85,27 @@
 
 .card-tipos {
     display: flex;
+    position: relative;
     width: 100%;
     justify-content: space-around;
     font-size: 5px;
+    top: -5px;
 }
 
 .card-tipos span {
     text-transform: capitalize;
+}
+
+#tituloPokedex {
+    font-family: 'Fascinate', cursive;
+    font-size: 30px;
+    background-color: var(--red-color);
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    color: rgb(255, 255, 255); /* Cambia el color del texto a naranja */
 }
 
 /* darkmode */
@@ -100,6 +113,10 @@ body.darkmode .seccion-pokedex {
     background-color: var(--dark-color-seccion);
 }
 
+
+body.darkmode #tituloPokedex {
+    background-color: var(--dark-color);
+}
 
 
 @media screen and (min-width:230px) {
@@ -116,6 +133,18 @@ body.darkmode .seccion-pokedex {
 
 
 @media screen and (min-width: 576px) {
+
+    #tituloPokedex {
+
+        font-size: 36px;
+     
+    }
+    
+    .container-img-pk {
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-bottom: 15px;
+    }
     #cards-container {
         grid-template-columns: 1fr 1fr ;
     }
@@ -128,11 +157,13 @@ body.darkmode .seccion-pokedex {
     }
 
     .card-container-name h2 {
+        display: block;
         font-size: medium;
         background-color: rgb(77, 77, 77);
         color: white;
         padding: 8px;
         letter-spacing: 0;
+        width: 100%;
     }
     
     .card-container-name {
@@ -140,7 +171,8 @@ body.darkmode .seccion-pokedex {
         padding-top: 10px;
         top: -25px;
         max-width: 75%;
-    
+        min-width: 70%;
+        border-top-right-radius: 5px;
     }
 
     .container-img-pk {
