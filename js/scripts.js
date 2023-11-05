@@ -64,12 +64,9 @@ function loadTheme(){
 function changeTheme(){
     const btnTheme = document.querySelector("#cambiarTheme")
     const body = document.querySelector('body');
-    const logo = document.querySelector('.logo');
 
     btnTheme.addEventListener('click', () =>{
-
-        let activado = body.classList.toggle('darkmode');
-        logo.src = activado ?  '../img/pokemonLogoDark.png' : '../img/pokemonLogo.png';
+        body.classList.toggle('darkmode');
         storeTheme(body.classList.contains('darkmode'));
     })
 }
