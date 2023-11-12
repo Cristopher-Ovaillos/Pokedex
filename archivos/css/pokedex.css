@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
+
+:root {
+    --dark-color-seccion: rgb(62, 77, 117);
+}
+
+
+#nav-pokedex {
+    color: var(--red-color);
+}
+
+.seccion-pokedex {
+    width: 90%;
+    background-color: white;
+    margin-top: 40px;
+    /* Aumenta el margen superior para mayor separación */
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    border-bottom: 5%;
+}
+
+#cards-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 0.5em;
+    padding: 20px 0;
+}
+
+.pokemon-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 10px;
+    background-color: rgb(34, 34, 34);
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+    padding: 5px;
+    margin: 15px 0px;
+}
+
+
+.container-img-pk {
+    background-color: rgba(241, 241, 241, 0.747);
+    background-size: cover;
+    border-radius: 8px;
+    padding-bottom: 5px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.container-img-pk img {
+    width: 80px;
+}
+
+.card-container-name {
+    padding: 0;
+    padding-top: 5px;
+    display: block;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    top: -10px;
+}
+
+.card-container-name h2 {
+    display: inline-block;
+    width: 90%;
+    text-transform: capitalize;
+    text-align: center;
+    border-radius: 5px;
+    padding: 4px 5px;
+    margin: 0;
+    overflow: hidden;
+    /* Evita que el texto rebase el contenedor */
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    font-size: 8px;
+    word-wrap: break-word;
+    background-color: rgb(77, 77, 77);
+    color: white;
+}
+
+
+.card-tipos {
+    display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 10px;
+    font-size: 5px;
+    top: -5px;
+}
+
+.card-tipos span {
+    text-transform: capitalize;
+    padding: 2px 20px;
+    border-radius: 5px;
+    color: rgb(48, 48, 48);
+    font-weight: 500;
+}
+
+#tituloPokedex {
+    font-family: 'Fascinate', cursive;
+    font-size: 30px;
+    background-color: var(--red-color);
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    color: rgba(255, 255, 255, 0.863); /* Cambia el color del texto a naranja */
+}
+
+
+
+.span-grass{ 
+    background: #bfe487;
+}
+
+.span-poison {
+    background-color: rgb(202, 71, 183)
+}
+
+/* darkmode */
+body.darkmode .seccion-pokedex {
+    background-color: var(--dark-color-seccion);
+}
+
+
+body.darkmode #tituloPokedex {
+    background-color: var(--dark-color);
+}
+
+
+@media screen and (min-width:230px) {
+    #cards-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width:370px) {
+    #cards-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+
+@media screen and (min-width: 576px) {
+
+    #tituloPokedex {
+
+        font-size: 36px;
+     
+    }
+    
+    .container-img-pk {
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-bottom: 15px;
+    }
+    #cards-container {
+        grid-template-columns: 1fr 1fr ;
+    }
+    
+    .pokemon-card {
+        /* Para acomodar al inicio el nombre */
+        align-items: flex-start; 
+        padding: 15px;
+        border-radius: 16px;
+    }
+
+    .card-container-name h2 {
+        display: block;
+        font-size: medium;
+        padding: 8px;
+        letter-spacing: 0;
+        width: 100%;
+    }
+    
+    .card-container-name {
+        padding-right: 10px;
+        padding-top: 10px;
+        top: -25px;
+        max-width: 75%;
+        min-width: 70%;
+        border-top-right-radius: 5px;
+    }
+
+    .container-img-pk {
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-bottom: 10px;
+    }
+   
+    
+    .container-img-pk img {
+        width: 160px;
+    }
+    
+    .card-tipos {
+        font-size: 15px;
+    }
+   
+}
+
+@media screen and (min-width: 768px)  {
+}
+
+@media screen and (min-width: 992px)  {
+    #cards-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .container-img-pk img {
+        width: 200px;
+    }
+}
+
+@media (min-width: 1400px) {
+    #cards-container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+}
