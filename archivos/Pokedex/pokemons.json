@@ -1,5 +1,46 @@
 [
   {
+    "id": 1,
+    "nombre": "bulbasaur",
+    "tipos": [
+      "grass",
+      "poison"
+    ],
+    "estadisticas": [
+      {
+        "nombre": "hp",
+        "valor_base": 45
+      },
+      {
+        "nombre": "attack",
+        "valor_base": 49
+      },
+      {
+        "nombre": "defense",
+        "valor_base": 49
+      },
+      {
+        "nombre": "special-attack",
+        "valor_base": 65
+      },
+      {
+        "nombre": "special-defense",
+        "valor_base": 65
+      },
+      {
+        "nombre": "speed",
+        "valor_base": 45
+      }
+    ],
+    "habilidades": [
+      "overgrow",
+      "chlorophyll"
+    ],
+    "especie": "bulbasaur",
+    "descripcion": "A strange seed was\nplanted on its\nback at birth.\fThe plant sprouts\nand grows with\nthis POKÃ©MON.",
+    "habitat": "grassland"
+  },
+  {
     "id": 2,
     "nombre": "ivysaur",
     "tipos": [

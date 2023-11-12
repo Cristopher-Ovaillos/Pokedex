@@ -1,4 +1,4 @@
-const containerCards = document.querySelector('#cards-container');
+
 const colores = {
     fire: "#ff7402",
     grass: "#9bcc50",
@@ -22,16 +22,76 @@ const colores = {
 };
 
 const coloresTipos = {
-    
+    grass: "#bfe487",
+    poison: "rgb(247, 125, 228)",
+
 }
+
+let isLoading = false;
+let cantidadPokemons = 0;
+
+function cargarMasPokemons() {
+    const limit = 12;
+    const page = (cantidadPokemons + limit) / limit;
+    console.log(page)
+
+    fetch(`http://localhost:3000/API/pokemon?page=${page}&limit=${limit}`)
+        .then(response => {
+            if (response.ok) {
+                return response.json(); // Convertir la respuesta a JSON
+            }
+            
+        })
+        .then(siguientePokemons => {
+            if (siguientePokemons && siguientePokemons.results && siguientePokemons.results.length > 0) {
+                cantidadPokemons += 12;
+                mostrarCards(siguientePokemons.results);
+            } else {
+                throw new Error('La solicitud no fue exitosa');
+            }
+        })
+        .catch(error => {
+            console.error('Hubo un error', error);
+        });
+}
+
+function sentinelaVisible(entries, observer) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !isLoading) {
+            isLoading = true;
+            cargarMasPokemons();
+            isLoading = false;
+        }
+    });
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    agregarColoresCards(); // inserta en css todos los posibles colores
+    agregarColoresTipos();
+    //observer para cards
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver(sentinelaVisible, options);
+    const sentinela = document.querySelector('#sentinela');
+    observer.observe(sentinela);
+})
+
+
+
+
 
 
 function agregarColoresTipos() {
     let styles = document.createElement('style');
     styles.textContent = '';
-    
-    for (let key in colores) {
-        let css = `div.${key}.pokemon-card .card-tipos { background: ${colores[key]}; }\n`;
+
+    for (let key in coloresTipos) {
+        let css = `.span-${key} { background: ${coloresTipos[key]}; }\n`;
         styles.textContent += css;
     }
 
@@ -41,7 +101,7 @@ function agregarColoresTipos() {
 function agregarColoresCards() {
     let styles = document.createElement('style');
     styles.textContent = '';
-    
+
     for (let key in colores) {
         let css = `div.${key}.pokemon-card, div.${key}.pokemon-card .card-container-name { background: ${colores[key]}; }\n`;
         styles.textContent += css;
@@ -50,32 +110,20 @@ function agregarColoresCards() {
     document.head.appendChild(styles);
 }
 
-
-document.addEventListener('DOMContentLoaded', () => {
-    agregarColoresCards(); // inserta en css todos los posibles colores
-    fetch('../Pokedex/pokemons.json') //obtiene la info de los pokemon
-        .then(data => {
-            return data.json()
-        })
-        .then(datos => {
-            mostrarCards(datos)
-        })
-
-});
-
 function mostrarCards(datos) {
+    const containerCards = document.querySelector('#cards-container');
 
     datos.forEach((pokemon) => {
 
         let card = document.createElement('div');
         card.classList.add('pokemon-card', getColorPorTipo(pokemon.tipos));
-        
+
 
         let containerImgPokemon = document.createElement('div');
         containerImgPokemon.className = "container-img-pk";
 
         let img = document.createElement('img');
-        img.src = '../img/asset-pokemon/'+getImagen(pokemon.id)+'.png';
+        img.src = '../img/asset-pokemon/' + getImagen(pokemon.id) + '.png';
 
         let nameDiv = document.createElement('div');
         nameDiv.className = "card-container-name"
@@ -87,15 +135,15 @@ function mostrarCards(datos) {
         tipos.className = 'card-tipos'
 
         let tipo1 = document.createElement('span');
-        tipo1.className = "span-"+pokemon.tipos[0];
+        tipo1.className = "span-" + pokemon.tipos[0];
         tipo1.textContent = pokemon.tipos[0];
 
-        
+
         tipos.appendChild(tipo1);
-        if (pokemon.tipos[1]){
+        if (pokemon.tipos[1]) {
             let tipo2 = document.createElement('span');
             tipo2.textContent = pokemon.tipos[1];
-            tipo2.className = "span-"+pokemon.tipos[1];
+            tipo2.className = "span-" + pokemon.tipos[1];
             tipos.appendChild(tipo2);
         }
 
@@ -105,22 +153,22 @@ function mostrarCards(datos) {
         card.appendChild(nameDiv);
 
         card.appendChild(tipos);
-    
+
 
         containerCards.appendChild(card);
     })
 }
 
 //obtiene el nombre de la clase para aplicar color
-function getColorPorTipo(tipos){
+function getColorPorTipo(tipos) {
     //falta arreglar cuando son de 2 tipos
     return tipos[0];
 }
 
 //agrega ceros a la imagen para armar la ruta
-function getImagen(id){
-    if (id < 100){
-        id = (id < 10) ? '00'+id: '0'+id;
+function getImagen(id) {
+    if (id < 100) {
+        id = (id < 10) ? '00' + id : '0' + id;
     }
     return id;
 }
