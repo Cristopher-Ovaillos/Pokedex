@@ -8,7 +8,7 @@
     --pink-color: rgb(255, 192, 203);
 }
 #nav-build {
-    color: rgb(223, 79, 12);
+    color: var(--red-color);
 }
 
 

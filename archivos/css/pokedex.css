@@ -80,6 +80,7 @@
     word-wrap: break-word;
     background-color: rgb(77, 77, 77);
     color: white;
+   
 }
 
 
@@ -100,7 +101,7 @@
     border-radius: 5px;
     color: rgb(48, 48, 48);
     font-weight: 500;
-    box-shadow: 0.75px 0.75px 0.75px rgba(54, 54, 54, 0.8);
+    box-shadow: 0.6px 0.6px 0.6px rgba(54, 54, 54, 0.8);
 }
 
 #tituloPokedex {
@@ -125,6 +126,60 @@ body.darkmode #tituloPokedex {
     background-color: var(--dark-color);
 }
 
+#search {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    background: rgba(255, 192, 203, 0.63);
+    border-radius: 25px;
+    backdrop-filter: blur(4px) saturate(100%);
+}
+
+.search-bar input{
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 8px 30px;
+    font-size: 18px;
+}
+
+.search-bar button {
+    border: 0;
+    outline: none;
+    border-radius: 50%;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    background: rgb(243, 71, 71);
+}
+
+.search-bar button:hover {
+    background: rgb(253, 111, 111);
+}
+
+body.darkmode .search-bar button{
+    background: rgb(98, 133, 228)
+}
+
+body.darkmode .search-bar button:hover{
+    background: rgb(117, 154, 255)
+}
+
+body.darkmode .search-bar {
+    background: #83c5be
+}
 
 @media screen and (min-width:230px) {
     #cards-container {

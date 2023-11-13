@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const observer = new IntersectionObserver(sentinelaVisible, options);
-    const sentinela = document.querySelector('#sentinela');
+    const sentinela = document.querySelector('#sentry');
     observer.observe(sentinela);
 })
 
