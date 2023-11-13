@@ -86,19 +86,21 @@
 .card-tipos {
     display: flex;
     position: relative;
+    flex-wrap: wrap;
     width: 100%;
     justify-content: space-evenly;
-    gap: 10px;
-    font-size: 5px;
+    font-size: 7px;
     top: -5px;
 }
 
 .card-tipos span {
     text-transform: capitalize;
-    padding: 2px 5px;
+    text-align: center;
+    padding: 1px 8px;
     border-radius: 5px;
     color: rgb(48, 48, 48);
     font-weight: 500;
+    box-shadow: 0.75px 0.75px 0.75px rgba(54, 54, 54, 0.8);
 }
 
 #tituloPokedex {
@@ -111,12 +113,6 @@
     text-align: center;
     padding: 20px;
     color: rgba(255, 255, 255, 0.863); /* Cambia el color del texto a naranja */
-}
-
-
-
-.span-poison {
-    /* background-color: */
 }
 
 /* darkmode */
@@ -197,11 +193,12 @@ body.darkmode #tituloPokedex {
     
     .card-tipos {
         font-size: 15px;
+        
     }
    
     .card-tipos span {
-      
-        padding: 2px 15px;
+        /* width: 80px; */
+        padding: 1px 15px;
     }
 }
 

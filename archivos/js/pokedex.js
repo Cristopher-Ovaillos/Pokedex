@@ -24,7 +24,21 @@ const colores = {
 const coloresTipos = {
     grass: "#bfe487",
     poison: "rgb(247, 125, 228)",
-
+    fire: "rgb(243, 154, 53)",
+    water: "lightblue",
+    bug: "#a4d96b",
+    normal: "rgb(214, 205, 205)",
+    electric: "rgb(247, 247, 143)",
+    ground: "rgb(201, 191, 104)",
+    psychic: "rgb(233, 190, 197) ",
+    rock: "#ceb33a",
+    fighting: "#e8b698",
+    ghost: "#d0a5d3",
+    ice: "#c9f5f1",
+    fairy: "#fdcfef",
+    steel: "#aac6c7",
+    dragon: "linear-gradient(to bottom, #8e61f8, #bea6f5)",
+    flying: "linear-gradient(to top, #9b9a9a, #bebebe)"
 }
 
 let isLoading = false;
@@ -91,7 +105,8 @@ function agregarColoresTipos() {
     styles.textContent = '';
 
     for (let key in coloresTipos) {
-        let css = `.span-${key} { background: ${coloresTipos[key]}; }\n`;
+        let css = `.span-${key} { background: ${coloresTipos[key]};
+    }\n`;
         styles.textContent += css;
     }
 
