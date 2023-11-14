@@ -19,6 +19,19 @@ router.get('/', (req, res) => {
     res.json(results);
 });
 
+//buscar por nombre?
+router.get('/:nombrePokemon', (req, res) => {
+    const nombreABuscar = req.params.nombrePokemon;
+
+    if (nombreABuscar === "" || nombreABuscar === ":") {
+        return res.status(400).json({ error: 'Nombre de Pokémon no proporcionado en la consulta.' });
+    }
+
+    const resultados = pokemons.filter(pokemon => nombreABuscar.toLowerCase().includes(pokemon.nombre.toLowerCase()));
+
+    res.json(resultados);
+});
+
 router.post('/', (req, res) => {
     const { id, nombre, tipos, estadisticas, habilidades, especie, descripcion, habitat } = req.body;
     if (id && nombre && tipos && estadisticas && habilidades && especie && descripcion && habitat) {

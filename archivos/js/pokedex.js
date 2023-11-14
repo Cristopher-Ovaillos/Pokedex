@@ -41,7 +41,6 @@ const coloresTipos = {
     flying: "linear-gradient(to top, #9b9a9a, #bebebe)"
 }
 
-let isLoading = false;
 let cantidadPokemons = 0;
 
 function cargarMasPokemons() {
@@ -71,10 +70,8 @@ function cargarMasPokemons() {
 
 function sentinelaVisible(entries, observer) {
     entries.forEach(entry => {
-        if (entry.isIntersecting && !isLoading) {
-            isLoading = true;
+        if (entry.isIntersecting) {
             cargarMasPokemons();
-            isLoading = false;
         }
     });
 }
