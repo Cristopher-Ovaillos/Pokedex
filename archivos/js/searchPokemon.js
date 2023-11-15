@@ -1,52 +1,48 @@
 document.addEventListener("DOMContentLoaded", function () {
     const input = document.getElementById("buscador-pokemon");
     const botonAgregar = document.getElementById("agregar-pokemon");
-    
-    const nombres=[];
+    const tablaImagenes = document.getElementById("tabla-imagenes");
 
-    let pos=1;
-    fetch("../Pokedex/pokemons.json")
-        .then(response => response.json())
-        .then(datos => {
-            const nombres = datos;
-            console.log("NOMBRES DEL JSON", nombres);
-            
-            botonAgregar.addEventListener("click", (event) => {
-                event.preventDefault(); // Evitar la acción predeterminada del formulario
+    let pos = 1;
 
-                const nombrePokemon = input.value.toLowerCase();
-               
-                const encontrado = nombres.find(pokemon => pokemon.nombre === nombrePokemon);
-                if (encontrado) {
-                    nombres.push(nombrePokemon);
-                    // Mostrar la información del Pokémon encontrado en la consola
-                    console.log(`Nombre: ${encontrado.nombre}, id: ${encontrado.id}`);
+    botonAgregar.addEventListener("click", (event) => {
+        event.preventDefault();
 
-                    
-                    const celda= document.querySelector(`#img-${pos}`);
-                    
-                    let img = document.createElement('img');
-                    img.src = "../img/asset-pokemon/"+getImagen(encontrado.id)+".png";
-                    celda.appendChild(img);
-                    pos++;
-
-
-                } else {
-                    // Mostrar un mensaje en la consola
-                    console.log("Pokémon no encontrado");
+        const nombrePokemon = input.value.toLowerCase();
+        
+        // Hacer una solicitud al servidor para obtener información del Pokémon
+        fetch("http://localhost:3000/API/pokemon/"+nombrePokemon)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Pokémon no encontrado');
                 }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                console.log("Nombre: "+data[0].nombre+ " id:"+ data[0].id);
+                // Agrego
+                const celda = document.createElement('td');
+                let img = document.createElement('img');
+                img.src = '../img/asset-pokemon/' + getImagen(data[0].id) + '.png';
 
-                input.value = "";
+               
+                celda.appendChild(img);
+                tablaImagenes.appendChild(celda);
+                pos++;
+            })
+            .catch(error => {
+                // error en la consola
+                console.error('Error al obtener información del Pokémon:', error);
             });
-        })
-        .catch(error => {
-            console.error("Error al cargar el archivo JSON: " + error);
-        });
+
+        input.value = "";
+    });
 });
 
-function getImagen(id){
-    if (id < 100){
-        id = (id < 10) ? '00'+id: '0'+id;
+function getImagen(id) {
+    if (id < 100) {
+        id = (id < 10) ? '00' + id : '0' + id;
     }
     return id;
 }
