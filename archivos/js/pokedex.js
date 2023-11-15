@@ -53,7 +53,7 @@ function cargarMasPokemons() {
             if (response.ok) {
                 return response.json(); // Convertir la respuesta a JSON
             }
-            
+
         })
         .then(siguientePokemons => {
             if (siguientePokemons && siguientePokemons.results && siguientePokemons.results.length > 0) {
@@ -80,6 +80,8 @@ function sentinelaVisible(entries, observer) {
 document.addEventListener('DOMContentLoaded', () => {
     agregarColoresCards(); // inserta en css todos los posibles colores
     agregarColoresTipos();
+    mostrarPokemon();
+
     //observer para cards
     const options = {
         root: null,
@@ -92,9 +94,59 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(sentinela);
 })
 
+function mostrarPokemon() {
+    const input = document.querySelector('#search-pokemon');
+    const btn = document.querySelector('#btn-search');
+
+
+    btn.addEventListener("click", (event) => {
+        event.preventDefault();
+        const nombrePokemon = input.value.toLowerCase();
+        input.value = "";
+        fetch("http://localhost:3000/API/pokemon/" + nombrePokemon)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Pokémon no encontrado');
+                }
+                return response.json();
+            })
+            .then(data => {
+                const detalleNombre = document.getElementById('detalle-nombre');
+                const detalleEstadisticas = document.getElementById('detalle-estadisticas');
+                const pokemonDetalle = document.getElementById('pokemon-detalle');
+                let img = document.createElement('img');
+                // Mostrar la tarjeta de detalle
+                
+
+                const estadisticas = data[0].estadisticas;
+
+                let estadisticasTexto = "Estadísticas:";
+                estadisticas.forEach(estadistica => {
+                    estadisticasTexto += `\n${estadistica.nombre}: ${estadistica.valor_base}`;
+                });
+                
+                detalleEstadisticas.textContent = estadisticasTexto;
+
+                detalleNombre.textContent = nombrePokemon;
+                pokemonDetalle.classList.add('visible');
+                var miImagen = document.getElementById('miImagen');
+                miImagen.src = '../img/asset-pokemon/' + getImagen(data[0].id) + '.png';
+                pokemonDetalle.appendChild(miImagen);
+
+            })
+            .catch(error => {
+                // error en la consola
+                console.error('Error al obtener información del Pokémon:', error);
+            });
+    });
 
 
 
+}
+window.cerrarDetalle = function () {
+    const pokemonDetalle = document.getElementById('pokemon-detalle');
+    pokemonDetalle.classList.remove('visible');
+};
 
 
 function agregarColoresTipos() {

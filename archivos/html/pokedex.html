@@ -18,8 +18,8 @@
         <div class="filtros-container">
             <div id="search">
                 <form action="" class="search-bar">
-                    <input type="text" name="" id="" placeholder="Buscar Pokemon">
-                    <button type="submit"><span class="iconify" data-icon="material-symbols:search"></span></button>
+                    <input type="text" name="" id="search-pokemon" placeholder="Buscar Pokemon">
+                    <button type="submit" id="btn-search"><span class="iconify" data-icon="material-symbols:search"></span></button>
                 </form>
             </div>
         </div>
@@ -27,7 +27,26 @@
         <div id="cards-container">
            
         </div>
-
+        <div id="pokemon-detalle" class="hidden">
+            <!-- Contenido de la tarjeta de detalle del Pokémon -->
+            <div id="contenido-detalles">
+                <h2 id="detalle-nombre"></h2>
+            
+                <div class="contenido-detalle">
+                    <div>
+                        <img id="miImagen" src="" alt="">
+                    </div>
+                    
+                    <div id="detalle-estadisticas">
+                       
+                    </div>
+                    
+                </div>
+            
+                <button id="btn-cerrar" onclick="cerrarDetalle()">Cerrar</button>
+            </div>
+          
+        </div>
         <div id="sentry"></div>
     </div>
 

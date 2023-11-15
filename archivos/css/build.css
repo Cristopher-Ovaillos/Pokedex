@@ -37,6 +37,7 @@ body.darkmode .build-team{
 
 body.darkmode .grid-pokemon td{
     border: none; 
+    display: flex;
     padding: 10px; 
     border-radius: 10px; 
     background-color: rgb(81, 149, 209);
