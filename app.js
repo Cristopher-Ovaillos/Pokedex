@@ -3,7 +3,7 @@ const app = express();//app es mi servidor
 const port = 3000;
 const path = require('path');
 
-// Configurar Express para servir archivos estáticos
+// Configurar Express para servir archivos estaticos
 app.use(express.static(path.join(__dirname, 'archivos')));
 //
 app.use(express.urlencoded({extended:false}));

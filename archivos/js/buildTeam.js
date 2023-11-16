@@ -25,11 +25,22 @@ document.addEventListener("DOMContentLoaded", function () {
                     console.log(data);
                     console.log("Nombre: " + data[0].nombre + " id:" + data[0].id);
                     arregloPokemon.push(nombrePokemon);
+                    
                     // Agrego
                     const celda = document.createElement('td');
+                    const botonEliminar = document.createElement('button');
+                    botonEliminar.textContent = "X";
+                    botonEliminar.id = 'btn-eliminar';
+                    botonEliminar.addEventListener('click', function() {
+                        // Lógica para eliminar el Pokémon
+                        eliminarPokemon(nombrePokemon, celda);
+                    });
+
                     let img = document.createElement('img');
                     img.src = '../img/asset-pokemon/' + getImagen(data[0].id) + '.png';
+                    
                     celda.appendChild(img);
+                    celda.appendChild(botonEliminar);
                     tablaImagenes.appendChild(celda);
                     pos++;
                 })
@@ -40,6 +51,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         input.value = "";
     });
+
+    function eliminarPokemon(nombrePokemon, celda) {
+        // Elimina el Pokémon del arreglo
+        arregloPokemon = arregloPokemon.filter(pokemon => pokemon.toLowerCase() !== nombrePokemon);
+        // Elimina la celda del DOM
+        celda.remove();
+        pos--;
+
+        console.log('Pokémon eliminado:', nombrePokemon);
+        console.log('Arreglo actualizado:', arregloPokemon);
+    }
 });
 
 function getImagen(id) {

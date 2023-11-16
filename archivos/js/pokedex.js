@@ -114,7 +114,7 @@ function mostrarPokemon() {
                 const detalleNombre = document.getElementById('detalle-nombre');
                 const detalleEstadisticas = document.getElementById('detalle-estadisticas');
                 const pokemonDetalle = document.getElementById('pokemon-detalle');
-                let img = document.createElement('img');
+    
                 // Mostrar la tarjeta de detalle
                 
 
