@@ -58,22 +58,35 @@ router.post('/', (req, res) => {
         res.status(400).json({ error: 'Datos de entrada no validos' });
     }
 });
+
 router.put('/:nombrePokemon', (req, res) => {
     const nombreABuscar = req.params.nombrePokemon;
-     const { id, nombre, tipos, estadisticas, habilidades, especie, descripcion, habitat } = req.body;
-    console.log("Nombre a buscar:"+ nombreABuscar);
-    console.log("solicitud:"+ req.body);
+    const { id, nombre, tipos, estadisticas, habilidades, especie, descripcion, habitat } = req.body;
+    console.log("Nombre a buscar:" + nombreABuscar);
+    console.log("Solicitud:" + req.body);
 
-    const pokemonElegido= pokemons.find(pokemon => nombreABuscar.toLowerCase() === pokemon.nombre.toLowerCase());
+    const pokemonElegido = pokemons.find(pokemon => nombreABuscar.toLowerCase() === pokemon.nombre.toLowerCase());
 
     if (!pokemonElegido) {
-        return res.status(404).json({ error: "Pokemon no encontrado."});
+        return res.status(404).json({ error: "Pokemon no encontrado" });
+    }
+    if (id !== undefined && typeof id === 'number') {
+        pokemonElegido.id = id;
+    }
+    if (nombre && typeof nombre === 'string') {
+        pokemonElegido.nombre = nombre;
     }
 
-    // Actualizar la descripción directamente
-    pokemonElegido.descripcion = descripcion;
-
-    // Devolver solo los datos actualizados del Pokémon
+    if (tipos && Array.isArray(tipos) && tipos.every(tipo => typeof tipo === 'string')) {
+        pokemonElegido.tipos = tipos;
+    }
+    if (estadisticas && Array.isArray(estadisticas) && estadisticas.every(est => est && typeof est.nombre === 'string' && typeof est.valor_base === 'number')) {
+        pokemonElegido.estadisticas = estadisticas;
+    }
+    if (descripcion &&  typeof descripcion === 'string') {
+        pokemonElegido.descripcion = descripcion;
+    }
+    // Devolver solo los datos actualizados
     res.json(pokemonElegido);
 });
 module.exports = router;
