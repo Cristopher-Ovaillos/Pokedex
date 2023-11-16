@@ -143,17 +143,36 @@ body.darkmode .btn-search:hover{
     height:     235px;
 }
 
+body.darkmode #btn-eliminar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--color-primary); 
+    color: #ffffff; 
+    border: none;
+    width: 35px; /* Ajusta el ancho según tus necesidades */
+    height: 35px; /* Ajusta el alto según tus necesidades */
+    border-radius: 50%; /* Hace que el botón sea redondeado */
+    padding: 5px; 
+    margin: 2px;
+    cursor: pointer;
+}
+
 #btn-eliminar {
     position: absolute;
     top: 0;
     right: 0;
-    background-color: #ff0000; /* Color de fondo del botón */
-    color: #ffffff; /* Color del texto del botón */
+    background-color: var(--red-color); 
+    color: #ffffff; 
     border: none;
+    width: 35px; /* Ajusta el ancho según tus necesidades */
+    height: 35px; /* Ajusta el alto según tus necesidades */
     border-radius: 50%; /* Hace que el botón sea redondeado */
-    padding: 8px; /* Espaciado interno del botón */
+    padding: 5px; 
+    margin: 2px;
     cursor: pointer;
 }
+
 .grid-pokemon {
     display: grid;
     grid-template-columns: 1fr;

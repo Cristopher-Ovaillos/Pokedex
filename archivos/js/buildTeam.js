@@ -29,15 +29,14 @@ document.addEventListener("DOMContentLoaded", function () {
                     // Agrego
                     const celda = document.createElement('td');
                     const botonEliminar = document.createElement('button');
-                    botonEliminar.textContent = "X";
+                    botonEliminar.textContent = "x";
                     botonEliminar.id = 'btn-eliminar';
                     botonEliminar.addEventListener('click', function() {
-                        // Lógica para eliminar el Pokémon
                         eliminarPokemon(nombrePokemon, celda);
                     });
 
                     let img = document.createElement('img');
-                    img.src = '../img/asset-pokemon/' + getImagen(data[0].id) + '.png';
+                    img.src = "../img/asset-pokemon/" + getImagen(data[0].id) + ".png";
                     
                     celda.appendChild(img);
                     celda.appendChild(botonEliminar);
@@ -46,21 +45,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 })
                 .catch(error => {
                     // error en la consola
-                    console.error('Error al obtener información del Pokémon:', error);
+                    console.error("Error al obtener información del Pokemon:"+ error);
                 });
         }
         input.value = "";
     });
 
     function eliminarPokemon(nombrePokemon, celda) {
-        // Elimina el Pokémon del arreglo
+        // elimino el pokemon
         arregloPokemon = arregloPokemon.filter(pokemon => pokemon.toLowerCase() !== nombrePokemon);
-        // Elimina la celda del DOM
+        // elimino la celda
         celda.remove();
         pos--;
 
-        console.log('Pokémon eliminado:', nombrePokemon);
-        console.log('Arreglo actualizado:', arregloPokemon);
+        console.log("Pokemon eliminado:"+ nombrePokemon);
+        console.log("Arreglo actualizado:"+ arregloPokemon);
     }
 });
 
