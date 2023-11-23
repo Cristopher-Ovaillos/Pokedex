@@ -3,20 +3,23 @@ const router = Router();
 const pokemons = require('../archivos/Pokedex/pokemons.json');
 
 router.get('/', (req, res) => {
-    const page = parseInt(req.query.page) || 1;
-    const limit = parseInt(req.query.limit) || 12; 
-    const startIndex = (page - 1) * limit;
-    const endIndex = page * limit;
-
+    const page = parseInt(req.query.page);
+    const limit = parseInt(req.query.limit); 
+    
     let results = {};
-
-    if (startIndex < pokemons.length) {
-        results.results = pokemons.slice(startIndex, endIndex);
+    
+    if (isNaN(page) || isNaN(limit) || page <= 0 || limit <= 0){
+        return res.status(400).json({ error: 'Indices incorrectos.' });
     } else {
-        results.results = [];
+        const startIndex = (page - 1) * limit;
+        const endIndex = page * limit;
+        if (startIndex < pokemons.length) {
+            results.results = pokemons.slice(startIndex, endIndex);
+        } 
+        
+        res.json(results);
     }
 
-    res.json(results);
 });
 
 //buscar por nombre
@@ -37,7 +40,7 @@ router.post('/', (req, res) => {
 
     // Validar que los campos requeridos estén presentes y sean del tipo esperado
     if (
-        id !== undefined && typeof id === 'number' &&
+        id && typeof id === 'number' &&
         nombre && typeof nombre === 'string' &&
         tipos && Array.isArray(tipos) && tipos.length > 0 &&
         estadisticas && Array.isArray(estadisticas) && estadisticas.length > 0 &&

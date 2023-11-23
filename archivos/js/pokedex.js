@@ -105,10 +105,9 @@ function mostrarPokemon() {
         input.value = "";
         fetch("http://localhost:3000/API/pokemon/" + nombrePokemon)
             .then(response => {
-                if (!response.ok) {
-                    throw new Error('Pokémon no encontrado');
+                if (response.ok) {
+                    return response.json();
                 }
-                return response.json();
             })
             .then(data => {
                 const detalleNombre = document.getElementById('detalle-nombre');

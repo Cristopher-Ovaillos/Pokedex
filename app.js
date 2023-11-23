@@ -12,6 +12,6 @@ app.use(express.json());
 app.use('/API/pokemon',require('./routes/pokemon'));
 
 app.listen(port, function () {
-  console.log(`Example app listening on port ${port}!`);
+  console.log(`Example app listening on http://localhost:${port}/html/index.html`);
 });
 
