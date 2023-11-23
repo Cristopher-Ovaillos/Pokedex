@@ -186,7 +186,8 @@ function mostrarCards(datos) {
         containerImgPokemon.className = "container-img-pk";
 
         let img = document.createElement('img');
-        img.src = '../img/asset-pokemon/' + getImagen(pokemon.id) + '.png';
+        let imgPath = '../img/asset-pokemon/' + getImagen(pokemon.id) + '.png';
+        img.src = imgPath;
 
         let nameDiv = document.createElement('div');
         nameDiv.className = "card-container-name"
@@ -219,7 +220,45 @@ function mostrarCards(datos) {
 
 
         containerCards.appendChild(card);
+
+        card.addEventListener("click", function () {
+            // Abre el modal correspondiente
+            let modal = new bootstrap.Modal(document.getElementById("exampleModal"));
+            let stats = pokemon.estadisticas;
+            let label = document.querySelector('.modal-header h1');
+            let nameLabel = pokemon.nombre;
+            label.textContent = "Información de "+nameLabel.charAt(0).toUpperCase() + nameLabel.slice(1);
+            fillModal(stats[0].valor_base, stats[1].valor_base, stats[2].valor_base, stats[3].valor_base, stats[4].valor_base, stats[5].valor_base);
+            insertImg(imgPath);
+            modal.show();
+        });
     })
+}
+
+function insertImg(imgPath){
+    const containerImg = document.querySelector("#img-pokemon-info");
+    containerImg.innerHTML = "";
+    let img = document.createElement('img');
+    img.src = imgPath;
+    containerImg.appendChild(img)
+}
+
+function fillModal(ps, attack, defense, specialAttack, specialDefense, speed){
+    setProgressBarWidth('ps-bar', ps);
+    setProgressBarWidth('attack-bar', attack);
+    setProgressBarWidth('defense-bar', defense);
+    setProgressBarWidth('special-attack-bar', specialAttack);
+    setProgressBarWidth('special-defense-bar', specialDefense);
+    setProgressBarWidth('speed-bar', speed);
+}
+
+function setProgressBarWidth(barId, value) {
+    const bar = document.getElementById(barId);
+    const maxValue = bar.parentNode.getAttribute('aria-valuemax');
+    const widthPercentage = (value / maxValue) * 100;
+    bar.textContent = value;
+    bar.style.width = widthPercentage + '%';
+    bar.setAttribute('aria-valuenow', value);
 }
 
 //obtiene el nombre de la clase para aplicar color
