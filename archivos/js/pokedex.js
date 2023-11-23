@@ -1,4 +1,4 @@
-
+let modal;
 const colores = {
     fire: "#ff7402",
     grass: "#9bcc50",
@@ -46,7 +46,6 @@ let cantidadPokemons = 0;
 function cargarMasPokemons() {
     const limit = 12;
     const page = (cantidadPokemons + limit) / limit;
-    console.log(page)
 
     fetch(`http://localhost:3000/API/pokemon?page=${page}&limit=${limit}`)
         .then(response => {
@@ -78,6 +77,7 @@ function sentinelaVisible(entries, observer) {
 
 
 document.addEventListener('DOMContentLoaded', () => {
+    modal = new bootstrap.Modal(document.getElementById("exampleModal"));
     agregarColoresCards(); // inserta en css todos los posibles colores
     agregarColoresTipos();
     mostrarPokemon();
@@ -94,6 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(sentinela);
 })
 
+//para la busqueda
 function mostrarPokemon() {
     const input = document.querySelector('#search-pokemon');
     const btn = document.querySelector('#btn-search');
@@ -110,28 +111,14 @@ function mostrarPokemon() {
                 }
             })
             .then(data => {
-                const detalleNombre = document.getElementById('detalle-nombre');
-                const detalleEstadisticas = document.getElementById('detalle-estadisticas');
-                const pokemonDetalle = document.getElementById('pokemon-detalle');
-    
-                // Mostrar la tarjeta de detalle
-                
-
-                const estadisticas = data[0].estadisticas;
-
-                let estadisticasTexto = "Estadísticas:";
-                estadisticas.forEach(estadistica => {
-                    estadisticasTexto += `\n${estadistica.nombre}: ${estadistica.valor_base}`;
-                });
-                
-                detalleEstadisticas.textContent = estadisticasTexto;
-
-                detalleNombre.textContent = nombrePokemon;
-                pokemonDetalle.classList.add('visible');
-                var miImagen = document.getElementById('miImagen');
-                miImagen.src = '../img/asset-pokemon/' + getImagen(data[0].id) + '.png';
-                pokemonDetalle.appendChild(miImagen);
-
+                let pokemonBuscado = data[0];
+                let stats = pokemonBuscado.estadisticas;
+                let label = document.querySelector('.modal-header h1');
+                let nameLabel = pokemonBuscado.nombre;
+                label.textContent = "Información de " + nameLabel.charAt(0).toUpperCase() + nameLabel.slice(1);
+                fillModal(stats[0].valor_base, stats[1].valor_base, stats[2].valor_base, stats[3].valor_base, stats[4].valor_base, stats[5].valor_base);
+                insertImg('../img/asset-pokemon/' + getImagen(pokemonBuscado.id) + '.png');
+                modal.show();
             })
             .catch(error => {
                 // error en la consola
@@ -142,10 +129,6 @@ function mostrarPokemon() {
 
 
 }
-window.cerrarDetalle = function () {
-    const pokemonDetalle = document.getElementById('pokemon-detalle');
-    pokemonDetalle.classList.remove('visible');
-};
 
 
 function agregarColoresTipos() {
@@ -223,11 +206,11 @@ function mostrarCards(datos) {
 
         card.addEventListener("click", function () {
             // Abre el modal correspondiente
-            let modal = new bootstrap.Modal(document.getElementById("exampleModal"));
+
             let stats = pokemon.estadisticas;
             let label = document.querySelector('.modal-header h1');
             let nameLabel = pokemon.nombre;
-            label.textContent = "Información de "+nameLabel.charAt(0).toUpperCase() + nameLabel.slice(1);
+            label.textContent = "Información de " + nameLabel.charAt(0).toUpperCase() + nameLabel.slice(1);
             fillModal(stats[0].valor_base, stats[1].valor_base, stats[2].valor_base, stats[3].valor_base, stats[4].valor_base, stats[5].valor_base);
             insertImg(imgPath);
             modal.show();
@@ -235,7 +218,7 @@ function mostrarCards(datos) {
     })
 }
 
-function insertImg(imgPath){
+function insertImg(imgPath) {
     const containerImg = document.querySelector("#img-pokemon-info");
     containerImg.innerHTML = "";
     let img = document.createElement('img');
@@ -243,7 +226,7 @@ function insertImg(imgPath){
     containerImg.appendChild(img)
 }
 
-function fillModal(ps, attack, defense, specialAttack, specialDefense, speed){
+function fillModal(ps, attack, defense, specialAttack, specialDefense, speed) {
     setProgressBarWidth('ps-bar', ps);
     setProgressBarWidth('attack-bar', attack);
     setProgressBarWidth('defense-bar', defense);

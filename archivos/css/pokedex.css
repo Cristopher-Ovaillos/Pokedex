@@ -149,7 +149,7 @@ body.darkmode #tituloPokedex {
 .search-bar {
     display: flex;
     align-items: center;
-    padding: 8px 10px;
+    padding: 4px 4px;
     background: rgba(255, 192, 203, 0.63);
     border-radius: 25px;
     backdrop-filter: blur(4px) saturate(100%);
@@ -160,19 +160,19 @@ body.darkmode #tituloPokedex {
     flex: 1;
     border: 0;
     outline: none;
-    padding: 8px 30px;
-    font-size: 18px;
+    padding: 4px 16px;
+    font-size: 15px;
 }
 
 .search-bar button {
     border: 0;
     outline: none;
     border-radius: 50%;
-    font-size: 20px;
+    font-size: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 6px;
     cursor: pointer;
     color: white;
     font-weight: bold;
@@ -218,7 +218,7 @@ body.darkmode .search-bar {
     border: 1px solid black;
     background: rgb(231, 231, 231);
     width: 50%;
-    border-radius: 10px;
+    border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -230,9 +230,11 @@ body.darkmode .search-bar {
 #stats-info{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 5px;
     width: 40%;
 }
+
 
 .label-stat{
     font-size: 15px;
@@ -273,6 +275,22 @@ body.darkmode .search-bar {
 
 
 @media screen and (min-width: 576px) {
+
+    .search-bar {
+        padding: 8px 10px;
+    }
+    
+    .search-bar input{
+        padding: 8px 30px;
+        font-size: 18px;
+    }
+    
+    .search-bar button {
+        font-size: 20px;
+        padding: 10px;
+    }
+    
+/* ----------*/
 
     #tituloPokedex {
 
