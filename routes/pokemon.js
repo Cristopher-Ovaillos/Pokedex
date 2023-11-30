@@ -73,22 +73,44 @@ router.put('/:nombrePokemon', (req, res) => {
     if (!pokemonElegido) {
         return res.status(404).json({ error: "Pokemon no encontrado" });
     }
-    if (id !== undefined && typeof id === 'number') {
-        pokemonElegido.id = id;
-    }
-    if (nombre && typeof nombre === 'string') {
-        pokemonElegido.nombre = nombre;
+
+    if (id  && typeof id !== 'number') {
+        return res.status(400).json({ error: "El campo 'id' debe ser un número" });
     }
 
-    if (tipos && Array.isArray(tipos) && tipos.every(tipo => typeof tipo === 'string')) {
+    if (nombre && typeof nombre !== 'string') {
+        return res.status(400).json({ error: "El campo 'nombre' debe ser una cadena de texto" });
+    }
+
+    if (tipos && (!Array.isArray(tipos) || !tipos.every(tipo => typeof tipo === 'string'))) {
+        return res.status(400).json({ error: "El campo 'tipos' debe ser un arreglo de cadenas de texto" });
+    }
+
+    if (estadisticas && (!Array.isArray(estadisticas) || !estadisticas.every(est => est && typeof est.nombre === 'string' && typeof est.valor_base === 'number'))) {
+        return res.status(400).json({ error: "El campo 'estadisticas' debe ser un arreglo con objetos que tengan 'nombre' como cadena de texto y 'valor_base' como número" });
+    }
+
+    if (descripcion && typeof descripcion !== 'string') {
+        return res.status(400).json({ error: "El campo 'descripcion' debe ser una cadena de texto" });
+    }
+
+    // Actualizar datos solo si los campos son proporcionados y válidos
+    if (id ) {
+        pokemonElegido.id = id;
+    }
+    if (nombre) {
+        pokemonElegido.nombre = nombre;
+    }
+    if (tipos) {
         pokemonElegido.tipos = tipos;
     }
-    if (estadisticas && Array.isArray(estadisticas) && estadisticas.every(est => est && typeof est.nombre === 'string' && typeof est.valor_base === 'number')) {
+    if (estadisticas) {
         pokemonElegido.estadisticas = estadisticas;
     }
-    if (descripcion &&  typeof descripcion === 'string') {
+    if (descripcion) {
         pokemonElegido.descripcion = descripcion;
     }
+
     // Devolver solo los datos actualizados
     res.json(pokemonElegido);
 });

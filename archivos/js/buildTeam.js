@@ -1,3 +1,6 @@
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const input = document.getElementById("buscador-pokemon");
     const botonAgregar = document.getElementById("agregar-pokemon");
@@ -24,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 .then(data => {
                     console.log(data);
                     console.log("Nombre: " + data[0].nombre + " id:" + data[0].id);
+                    console.log(data[0].tipos);
                     arregloPokemon.push(nombrePokemon);
                     
                     // Agrego

@@ -6,7 +6,28 @@
     --color-primary: #006d77;
     --red-color:rgb(236, 82, 82);
     --pink-color: rgb(255, 192, 203);
+  
+
+    --grass-color: #bfe487;
+    --poison-color: rgb(247, 125, 228);
+    --fire-color: rgb(243, 154, 53);
+    --water-color: lightblue;
+    --bug-color: #a4d96b;
+    --normal-color: rgb(214, 205, 205);
+    --electric-color: rgb(247, 247, 143);
+    --ground-color: rgb(201, 191, 104);
+    --psychic-color: rgb(233, 190, 197);
+    --rock-color: #ceb33a;
+    --fighting-color: #e8b698;
+    --ghost-color: #d0a5d3;
+    --ice-color: #c9f5f1;
+    --fairy-color: #fdcfef;
+    --steel-color: #aac6c7;
+    --dragon-color: linear-gradient(to bottom, #8e61f8, #bea6f5);
+    --flying-color: linear-gradient(to top, #9b9a9a, #bebebe);
+
 }
+
 #nav-build {
     color: var(--red-color);
 }
@@ -180,6 +201,24 @@ body.darkmode #btn-eliminar {
     gap: 0.5em;
     padding: 20px 0;
 }
+
+
+#tablaDebilidades {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  #tablaDebilidades th, #tablaDebilidades td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  #tablaDebilidades th {
+    background-color: #f2f2f2;
+  }
+
 
 @media screen and (min-width: 992px)  {
     .grid-pokemon {
